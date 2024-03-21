@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "GUI/1.0.0": {
+        "dependencies": {
+          "ButterDevelopChessEngine": "1.0.0"
+        },
+        "runtime": {
+          "GUI.dll": {}
+        }
+      },
+      "ButterDevelopChessEngine/1.0.0": {
+        "runtime": {
+          "ButterDevelopChessEngine.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ButterDevelopChessEngine/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
