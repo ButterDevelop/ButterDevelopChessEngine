@@ -1,21 +1,20 @@
 using ButterDevelopChessEngine.Controllers;
 using ButterDevelopChessEngine.Models;
-using System;
 using System.Numerics;
 
 namespace GUI
 {
     public partial class MainForm : Form
     {
-        private static readonly Color DEFAULT_TRANSPARENT_COLOR = Color.Transparent,
+        private static readonly Color DEFAULT_TRANSPARENT_COLOR   = Color.Transparent,
                                       DEFAULT_CHOSEN_SQUARE_COLOR = Color.Orange,
                                       DEFAULT_POSSIBLE_MOVE_COLOR = Color.FromArgb(128, 128, 128, 192),
-                                      DEFAULT_LAST_MOVE_COLOR = Color.FromArgb(100, 200, 200, 30);
+                                      DEFAULT_LAST_MOVE_COLOR     = Color.FromArgb(100, 200, 200, 30);
 
-        private const int AI_DEPTH = 4;
+        private const int AI_DEPTH = 5;
 
-        private bool _playerTurn;
-        private Board _board;
+        private bool        _playerTurn;
+        private Board       _board;
         private PictureBox? _chosenPiece;
 
         private Dictionary<PictureBox, Image> _defaultGUIPosition;
@@ -46,11 +45,12 @@ namespace GUI
                 if (squareIndex < 0) continue;
 
                 bool white = true;
-                int  piece = _board.WhatPieceIsThatSquare(AIController.ONE_SINGLE_BIT_MASK[squareIndex], Board.WHITE);
+                ulong square = BitCalculations.GetNumberByBit(squareIndex);
+                int  piece = _board.WhatPieceIsThatSquare(square, Board.WHITE);
                 if (piece == Board.UNKNOWN)
                 {
                     white = false;
-                    piece = _board.WhatPieceIsThatSquare(AIController.ONE_SINGLE_BIT_MASK[squareIndex], Board.BLACK);
+                    piece = _board.WhatPieceIsThatSquare(square, Board.BLACK);
                 }
 
                 switch (piece)
@@ -80,10 +80,10 @@ namespace GUI
         private void RefreshStatusLabel()
         {
             string text = "Game is running";
-            if (VerificationController.IsStalemate(_board)) text = "Stalemate";
-            if (VerificationController.IsCheckFor(_board, white: true)) text = "Check for white";
-            if (VerificationController.IsCheckFor(_board, white: false)) text = "Check for black";
-            if (VerificationController.IsCheckmateFor(_board, white: true)) text = "Black won";
+            if (VerificationController.IsStalemate(_board))                  text = "Stalemate";
+            if (VerificationController.IsCheckFor(_board, white: true))      text = "Check for white";
+            if (VerificationController.IsCheckFor(_board, white: false))     text = "Check for black";
+            if (VerificationController.IsCheckmateFor(_board, white: true))  text = "Black won";
             if (VerificationController.IsCheckmateFor(_board, white: false)) text = "White won";
 
             UpdateLabelText(labelStatus, text);
@@ -94,8 +94,8 @@ namespace GUI
             if (squareIndexFrom < 0 || squareIndexFrom >= AIController.ONE_SINGLE_BIT_MASK.Length ||
                 squareIndexTo   < 0 || squareIndexTo   >= AIController.ONE_SINGLE_BIT_MASK.Length) return false;
 
-            ulong moveFrom = AIController.ONE_SINGLE_BIT_MASK[squareIndexFrom];
-            ulong moveTo   = AIController.ONE_SINGLE_BIT_MASK[squareIndexTo];
+            ulong moveFrom = BitCalculations.GetNumberByBit(squareIndexFrom);
+            ulong moveTo   = BitCalculations.GetNumberByBit(squareIndexTo);
 
             var thisMove = AIController.GenerateAllPossibleMoves(_board, white: true).FirstOrDefault(m => m.From == moveFrom && m.To == moveTo);
             if (thisMove == null) return false;
@@ -165,10 +165,10 @@ namespace GUI
             clickedSquare.BackColor = DEFAULT_CHOSEN_SQUARE_COLOR;
             _chosenPiece = clickedSquare;
 
-            int squareIndexFrom = int.Parse(_chosenPiece.Tag.ToString() ?? "-1");
+            int squareIndexFrom    = int.Parse(_chosenPiece.Tag.ToString() ?? "-1");
+            ulong squareFromNumber = BitCalculations.GetNumberByBit(squareIndexFrom);
 
-            foreach (var validMove in AIController.GenerateAllPossibleMoves(_board, white: true)
-                                                  .Where(m => m.From == AIController.ONE_SINGLE_BIT_MASK[squareIndexFrom]))
+            foreach (var validMove in AIController.GenerateAllPossibleMoves(_board, white: true).Where(m => m.From == squareFromNumber))
             {
                 foreach (var square in IterateAllPieces())
                 {

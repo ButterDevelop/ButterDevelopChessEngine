@@ -130,7 +130,7 @@ namespace ButterDevelopChessEngine.Controllers
             int color         = white ? Board.WHITE : Board.BLACK;
             var possibleMoves = new List<Move>();
 
-            if (board.LastMove != null && MoveMaskController.IsPawnDoublePushed(board.LastMove))
+            if (board.LastMove != null && board.LastMove.IsWhite != white && MoveMaskController.IsPawnDoublePushed(board.LastMove))
             {
                 ulong moveTo = white ? (board.LastMove.To << 8) : (board.LastMove.To >> 8);
 
@@ -149,6 +149,7 @@ namespace ButterDevelopChessEngine.Controllers
                         TakenPiece     = Board.PAWNS,
                         SpecialMove    = SpecialMove.EnPassant
                     };
+
                     if (TryMove(board, move, white)) possibleMoves.Add(move);
                 }
             }
@@ -183,14 +184,18 @@ namespace ButterDevelopChessEngine.Controllers
                         SpecialMove    = SpecialMove.None
                     };
 
-                    if (piece == Board.PAWNS && MoveMaskController.IsPawnReadyToPromote(move.To, white) && TryMove(board, move, white))
+                    if (piece == Board.PAWNS && MoveMaskController.IsPawnReadyToPromote(move.To, white))
                     {
                         move.SpecialMove = SpecialMove.PromotePawn;
-
-                        for (int promotePiece = Board.QUEENS; promotePiece > Board.PAWNS; promotePiece--)
+                        move.PromoteTo   = Board.QUEENS;
+                        if (TryMove(board, move, white))
                         {
-                            move.PromoteTo = promotePiece;
-                            possibleMoves.Add(move);
+                            for (int promotePiece = Board.QUEENS; promotePiece > Board.PAWNS; promotePiece--)
+                            {
+                                var newMove = Move.Clone(move);
+                                newMove.PromoteTo = promotePiece;
+                                possibleMoves.Add(newMove);
+                            }
                         }
                     }
                     else
@@ -200,7 +205,7 @@ namespace ButterDevelopChessEngine.Controllers
                 }
             }
 
-            return possibleMoves;
+            return possibleMoves.OrderByDescending(m => m.IsPieceTaken).ToList();
         }
 
         public static IEnumerable<Move> GenerateAllPossibleMoves(Board board, bool white)
