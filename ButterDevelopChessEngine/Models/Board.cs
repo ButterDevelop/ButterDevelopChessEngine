@@ -85,29 +85,29 @@ namespace ButterDevelopChessEngine.Models
             int color         = move.IsWhite ? WHITE : BLACK;
             int reversedColor = move.IsWhite ? BLACK : WHITE;
 
-            _bitboards[color][move.WhatPieceMoved] ^= move.From;
-            _bitboards[color][move.WhatPieceMoved] |= move.To;
+            BitCalculations.TurnOffBit(ref _bitboards[color][move.WhatPieceMoved], move.From);
+            BitCalculations.TurnOnBit( ref _bitboards[color][move.WhatPieceMoved], move.To);
 
-            _wholeBitboards[color] ^= move.From;
-            _wholeBitboards[color] |= move.To;
+            BitCalculations.TurnOffBit(ref _wholeBitboards[color], move.From);
+            BitCalculations.TurnOnBit( ref _wholeBitboards[color], move.To);
 
             if (move.IsPieceTaken && move.SpecialMove != SpecialMove.EnPassant)
             {
-                _bitboards[reversedColor][move.TakenPiece] ^= move.To;
-                _wholeBitboards[reversedColor]             ^= move.To;
+                BitCalculations.TurnOffBit(ref _bitboards[reversedColor][move.TakenPiece], move.To);
+                BitCalculations.TurnOffBit(ref _wholeBitboards[reversedColor],             move.To);
             }
 
             if (move.SpecialMove == SpecialMove.PromotePawn)
             {
-                _bitboards[color][move.WhatPieceMoved] ^= move.To;
-                _bitboards[color][move.PromoteTo]      |= move.To;
+                BitCalculations.TurnOffBit(ref _bitboards[color][move.WhatPieceMoved], move.To);
+                BitCalculations.TurnOnBit( ref _bitboards[color][move.PromoteTo],      move.To);
             }
             else
             if (move.SpecialMove == SpecialMove.EnPassant)
             {
                 ulong whereToTakeEnPassant = move.IsWhite ? (move.To >> 8) : (move.To << 8);
-                _bitboards[reversedColor][move.TakenPiece] ^= whereToTakeEnPassant;
-                _wholeBitboards[reversedColor]             ^= whereToTakeEnPassant;
+                BitCalculations.TurnOffBit(ref _bitboards[reversedColor][move.TakenPiece], whereToTakeEnPassant);
+                BitCalculations.TurnOffBit(ref _wholeBitboards[reversedColor],             whereToTakeEnPassant);
             }
 
             _wholeBitboards[WHOLE] = _wholeBitboards[color] | _wholeBitboards[reversedColor];
@@ -122,28 +122,28 @@ namespace ButterDevelopChessEngine.Models
             int color         = move.IsWhite ? WHITE : BLACK;
             int reversedColor = move.IsWhite ? BLACK : WHITE;
 
-            _bitboards[color][move.WhatPieceMoved] ^= move.To;
-            _bitboards[color][move.WhatPieceMoved] |= move.From;
+            BitCalculations.TurnOffBit(ref _bitboards[color][move.WhatPieceMoved], move.To);
+            BitCalculations.TurnOnBit( ref _bitboards[color][move.WhatPieceMoved], move.From);
 
-            _wholeBitboards[color] ^= move.To;
-            _wholeBitboards[color] |= move.From;
+            BitCalculations.TurnOffBit(ref _wholeBitboards[color], move.To);
+            BitCalculations.TurnOnBit( ref _wholeBitboards[color], move.From);
 
             if (move.IsPieceTaken && move.SpecialMove != SpecialMove.EnPassant)
             {
-                _bitboards[reversedColor][move.TakenPiece] |= move.To;
-                _wholeBitboards[reversedColor]             |= move.To;
+                BitCalculations.TurnOnBit(ref _bitboards[reversedColor][move.TakenPiece], move.To);
+                BitCalculations.TurnOnBit(ref _wholeBitboards[reversedColor],             move.To);
             }
 
             if (move.SpecialMove == SpecialMove.PromotePawn)
             {
-                _bitboards[color][move.PromoteTo] ^= move.To;
+                BitCalculations.TurnOffBit(ref _bitboards[color][move.PromoteTo], move.To);
             }
             else
             if (move.SpecialMove == SpecialMove.EnPassant)
             {
                 ulong whereToTakeEnPassant = move.IsWhite ? (move.To >> 8) : (move.To << 8);
-                _bitboards[reversedColor][move.TakenPiece] |= whereToTakeEnPassant;
-                _wholeBitboards[reversedColor]             |= whereToTakeEnPassant;
+                BitCalculations.TurnOnBit(ref _bitboards[reversedColor][move.TakenPiece], whereToTakeEnPassant);
+                BitCalculations.TurnOnBit(ref _wholeBitboards[reversedColor],             whereToTakeEnPassant);
             }
 
             _wholeBitboards[WHOLE] = _wholeBitboards[color] | _wholeBitboards[reversedColor];
