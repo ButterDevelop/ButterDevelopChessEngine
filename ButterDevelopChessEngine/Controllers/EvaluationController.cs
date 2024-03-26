@@ -24,7 +24,8 @@ namespace ButterDevelopChessEngine.Controllers
 
         internal static int EvaluateBoard(Board board)
         {
-            if (VerificationController.IsStalemate(board)) return 0;
+            if (VerificationController.IsStalemateFor(board, white: false) || 
+                VerificationController.IsStalemateFor(board, white: true)) return 0;
             if (VerificationController.IsCheckmateFor(board, white: true))  return int.MinValue;
             if (VerificationController.IsCheckmateFor(board, white: false)) return int.MaxValue;
 

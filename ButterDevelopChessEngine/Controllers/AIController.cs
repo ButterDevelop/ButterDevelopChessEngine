@@ -157,7 +157,59 @@ namespace ButterDevelopChessEngine.Controllers
             return possibleMoves;
         }
 
-        private static List<Move> GeneratePossibleMovesForPiece(Board board, bool white, int piece)
+        private static List<Move> GenerateCastleMoves(Board board, bool white)
+        {
+            int color = white ? Board.WHITE : Board.BLACK;
+            var possibleMoves = new List<Move>();
+
+            ulong kingSquare = board.Bitboard(color, Board.KING);
+
+            if (VerificationController.IsThisSquareOccupied(kingSquare, board.CastleRights) && !VerificationController.IsCheckFor(board, white))
+            {
+                ulong shortCastleRookSquare = kingSquare >> 3;
+                ulong longCastleRookSquare  = kingSquare << 4;
+
+                var attackMovesBitboard = GenerateMovesBitboard(board, !white, onlyAttack: true);
+
+                if (VerificationController.IsThisSquareOccupied(shortCastleRookSquare, board.CastleRights) &&
+                    VerificationController.IsCastleAvailableByEmptySquares(attackMovesBitboard, board.WholeBitboards[Board.WHOLE], white, shortCastle: true))
+                {
+                    var moveShortCastle = new Move
+                    {
+                        IsWhite        = white,
+                        WhatPieceMoved = Board.KING,
+                        From           = kingSquare,    
+                        To             = kingSquare >> 2,
+                        IsPieceTaken   = false,
+                        TakenPiece     = Board.UNKNOWN,
+                        SpecialMove    = SpecialMove.ShortCastle
+                    };
+
+                    if (TryMove(board, moveShortCastle, white)) possibleMoves.Add(moveShortCastle);
+                }
+
+                if (VerificationController.IsThisSquareOccupied(longCastleRookSquare, board.CastleRights) &&
+                    VerificationController.IsCastleAvailableByEmptySquares(attackMovesBitboard, board.WholeBitboards[Board.WHOLE], white, shortCastle: false))
+                {
+                    var moveLongCastle = new Move
+                    {
+                        IsWhite        = white,
+                        WhatPieceMoved = Board.KING,
+                        From           = kingSquare,
+                        To             = kingSquare << 2,
+                        IsPieceTaken   = false,
+                        TakenPiece     = Board.UNKNOWN,
+                        SpecialMove    = SpecialMove.LongCastle
+                    };
+
+                    if (TryMove(board, moveLongCastle, white)) possibleMoves.Add(moveLongCastle);
+                }
+            }
+
+            return possibleMoves;
+        }
+
+        private static List<Move> GeneratePossibleMovesForPiece(Board board, bool white, int piece, bool onlyAttack)
         {
             int color         = white ? Board.WHITE : Board.BLACK;
             int reversedColor = white ? Board.BLACK : Board.WHITE;
@@ -166,7 +218,7 @@ namespace ButterDevelopChessEngine.Controllers
             ulong bitboard = board.Bitboard(color, piece);
             foreach (ulong moveFrom in IterateSingleBits(bitboard))
             {
-                ulong manyMovesTo = GenerateMoveBySinglePiece(board, moveFrom, white, piece);
+                ulong manyMovesTo = GenerateMoveBySinglePiece(board, moveFrom, white, piece, onlyAttack);
         
                 foreach (ulong moveTo in IterateSingleBits(manyMovesTo))
                 {
@@ -205,18 +257,21 @@ namespace ButterDevelopChessEngine.Controllers
                 }
             }
 
-            return possibleMoves.OrderByDescending(m => m.IsPieceTaken).ToList();
+            if (!onlyAttack) possibleMoves = possibleMoves.OrderByDescending(m => m.IsPieceTaken).ToList();
+
+            return possibleMoves;
         }
 
-        public static IEnumerable<Move> GenerateAllPossibleMoves(Board board, bool white)
+        public static IEnumerable<Move> GenerateAllPossibleMoves(Board board, bool white, bool onlyAttack = false)
         {
-            var moves =    GeneratePossibleMovesForPiece(board, white, Board.PAWNS);
+            var moves =    GeneratePossibleMovesForPiece(board, white, Board.PAWNS,   onlyAttack);
             moves.AddRange(GenerateEnPassantMoves(board, white));
-            moves.AddRange(GeneratePossibleMovesForPiece(board, white, Board.KNIGHTS));
-            moves.AddRange(GeneratePossibleMovesForPiece(board, white, Board.BISHOPS));
-            moves.AddRange(GeneratePossibleMovesForPiece(board, white, Board.QUEENS));
-            moves.AddRange(GeneratePossibleMovesForPiece(board, white, Board.ROOKS));
-            moves.AddRange(GeneratePossibleMovesForPiece(board, white, Board.KING));
+            moves.AddRange(GeneratePossibleMovesForPiece(board, white, Board.KNIGHTS, onlyAttack));
+            moves.AddRange(GeneratePossibleMovesForPiece(board, white, Board.BISHOPS, onlyAttack));
+            moves.AddRange(GeneratePossibleMovesForPiece(board, white, Board.QUEENS,  onlyAttack));
+            moves.AddRange(GeneratePossibleMovesForPiece(board, white, Board.ROOKS,   onlyAttack));
+            moves.AddRange(GeneratePossibleMovesForPiece(board, white, Board.KING,    onlyAttack));
+            if (!onlyAttack) moves.AddRange(GenerateCastleMoves(board, white));
 
             return moves;
         }

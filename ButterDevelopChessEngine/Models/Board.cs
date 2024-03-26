@@ -18,7 +18,8 @@ namespace ButterDevelopChessEngine.Models
                             DEFAULT_BITBOARD_BLACK_KING    = 0x800000000000000,
                             DEFAULT_WHITE_WHOLE_BITBOARD   = 0xffff,
                             DEFAULT_BLACK_WHOLE_BITBOARD   = 0xffff000000000000,
-                            DEFAULT_WHOLE_BITBOARD         = DEFAULT_WHITE_WHOLE_BITBOARD | DEFAULT_BLACK_WHOLE_BITBOARD;
+                            DEFAULT_WHOLE_BITBOARD         = DEFAULT_WHITE_WHOLE_BITBOARD | DEFAULT_BLACK_WHOLE_BITBOARD,
+                            DEFAULT_CASTLE_RIGHTS          = 0x8900000000000089;
         internal const int  TEAMS_COUNT = 2, PIECES_GROUPS_COUNT = 6;
         public   const int  WHITE = 0, 
                             BLACK = 1, 
@@ -34,7 +35,8 @@ namespace ButterDevelopChessEngine.Models
         // https://gekomad.github.io/Cinnamon/BitboardCalculator/
         // https://www.rapidtables.com/calc/math/binary-calculator.html
 
-        private Stack<Move> _moves;
+        private Stack<Move> _moves, _castleMoves;
+        private ulong       _castleRights;
         private ulong[]     _wholeBitboards;
         private ulong[][]   _bitboards;
 
@@ -43,7 +45,10 @@ namespace ButterDevelopChessEngine.Models
             _bitboards = new ulong[TEAMS_COUNT][];
             for (int i = 0; i < TEAMS_COUNT; i++) _bitboards[i] = new ulong[PIECES_GROUPS_COUNT];
 
-            _moves = new Stack<Move>();
+            _moves       = new Stack<Move>();
+            _castleMoves = new Stack<Move>();
+
+            _castleRights = DEFAULT_CASTLE_RIGHTS;
 
             _bitboards[WHITE][PAWNS]   = DEFAULT_BITBOARD_WHITE_PAWNS;
             _bitboards[BLACK][PAWNS]   = DEFAULT_BITBOARD_BLACK_PAWNS;
@@ -109,6 +114,29 @@ namespace ButterDevelopChessEngine.Models
                 BitCalculations.TurnOffBit(ref _bitboards[reversedColor][move.TakenPiece], whereToTakeEnPassant);
                 BitCalculations.TurnOffBit(ref _wholeBitboards[reversedColor],             whereToTakeEnPassant);
             }
+            else
+            if (move.SpecialMove == SpecialMove.LongCastle || move.SpecialMove == SpecialMove.ShortCastle)
+            {
+                ulong rookSquareFrom = move.To << 2;
+                ulong rookSquareTo   = move.To >> 1;
+                if (move.SpecialMove == SpecialMove.ShortCastle)
+                {
+                    rookSquareFrom = move.To >> 1;
+                    rookSquareTo   = move.To << 1;
+                }
+
+                BitCalculations.TurnOffBit(ref _bitboards[color][ROOKS], rookSquareFrom);
+                BitCalculations.TurnOnBit( ref _bitboards[color][ROOKS], rookSquareTo);
+
+                BitCalculations.TurnOffBit(ref _wholeBitboards[color], rookSquareFrom);
+                BitCalculations.TurnOnBit( ref _wholeBitboards[color], rookSquareTo);
+            }
+
+            if (move.WhatPieceMoved == KING || move.WhatPieceMoved == ROOKS)
+            {
+                //BitCalculations.TurnOffBit(ref _castleRights, move.From);
+                _castleMoves.Push(move);
+            }
 
             _wholeBitboards[WHOLE] = _wholeBitboards[color] | _wholeBitboards[reversedColor];
 
@@ -145,6 +173,29 @@ namespace ButterDevelopChessEngine.Models
                 BitCalculations.TurnOnBit(ref _bitboards[reversedColor][move.TakenPiece], whereToTakeEnPassant);
                 BitCalculations.TurnOnBit(ref _wholeBitboards[reversedColor],             whereToTakeEnPassant);
             }
+            else
+            if (move.SpecialMove == SpecialMove.LongCastle || move.SpecialMove == SpecialMove.ShortCastle)
+            {
+                ulong rookSquareFrom = move.To << 2;
+                ulong rookSquareTo   = move.To >> 1;
+                if (move.SpecialMove == SpecialMove.ShortCastle)
+                {
+                    rookSquareFrom = move.To >> 1;
+                    rookSquareTo   = move.To << 1;
+                }
+
+                BitCalculations.TurnOffBit(ref _bitboards[color][ROOKS], rookSquareTo);
+                BitCalculations.TurnOnBit( ref _bitboards[color][ROOKS], rookSquareFrom);
+
+                BitCalculations.TurnOffBit(ref _wholeBitboards[color], rookSquareTo);
+                BitCalculations.TurnOnBit( ref _wholeBitboards[color], rookSquareFrom);
+            }
+
+            if (move.WhatPieceMoved == KING || move.WhatPieceMoved == ROOKS)
+            {
+                //BitCalculations.TurnOnBit(ref _castleRights, move.From);
+                _castleMoves.Pop();
+            }
 
             _wholeBitboards[WHOLE] = _wholeBitboards[color] | _wholeBitboards[reversedColor];
         }
@@ -157,6 +208,20 @@ namespace ButterDevelopChessEngine.Models
         public Move? LastMove
         {
             get { return _moves.Count == 0 ? null : _moves.Peek(); }
+        }
+
+        public ulong CastleRights
+        {
+            get
+            {
+                ulong localCastleRights = DEFAULT_CASTLE_RIGHTS;
+                foreach (var move in _castleMoves)
+                {
+                    BitCalculations.TurnOffBit(ref localCastleRights, move.From);
+                }
+                //return _castleRights;
+                return localCastleRights;
+            }
         }
 
         internal ulong[] WholeBitboards
