@@ -3,8 +3,8 @@
     public enum SpecialMove
     {
         None        = 0,
-        ShortCastle = 1,
-        LongCastle  = 2,
+        LongCastle  = 1,
+        ShortCastle = 2,
         PromotePawn = 3,
         EnPassant   = 4
     }

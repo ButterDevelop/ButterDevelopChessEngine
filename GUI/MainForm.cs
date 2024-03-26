@@ -11,27 +11,26 @@ namespace GUI
                                       DEFAULT_POSSIBLE_MOVE_COLOR = Color.FromArgb(128, 128, 128, 192),
                                       DEFAULT_LAST_MOVE_COLOR     = Color.FromArgb(100, 200, 200, 30);
 
-        private const int AI_DEPTH = 5;
+        private const int AI_DEPTH = 3;
 
-        private bool        _playerTurn;
+        private bool        _playerTurn, _isPlayerPlayingWhite;
         private Board       _board;
         private PictureBox? _chosenPiece;
 
-        private Dictionary<PictureBox, Image> _defaultGUIPosition;
+        private readonly object lockObject = new object();
 
         public MainForm()
         {
             InitializeComponent();
 
-            _defaultGUIPosition = new Dictionary<PictureBox, Image>();
-
             _playerTurn = true;
             _board = new Board();
+
+            _isPlayerPlayingWhite = true;
 
             foreach (var pictureBox in IterateAllPieces())
             {
                 pictureBox.MouseDown += PictureBox_MouseDown;
-                _defaultGUIPosition.Add(pictureBox, pictureBox.Image);
             }
 
             buttonRestart_Click(this, new EventArgs());
@@ -53,15 +52,32 @@ namespace GUI
                     piece = _board.WhatPieceIsThatSquare(square, Board.BLACK);
                 }
 
-                switch (piece)
+                lock (lockObject) 
                 {
-                    case Board.PAWNS:   pictureBox.Image = white ? Properties.Resources.white_pawn   : Properties.Resources.black_pawn  ; break;
-                    case Board.ROOKS:   pictureBox.Image = white ? Properties.Resources.white_rook   : Properties.Resources.black_rook  ; break;
-                    case Board.KNIGHTS: pictureBox.Image = white ? Properties.Resources.white_knight : Properties.Resources.black_knight; break;
-                    case Board.BISHOPS: pictureBox.Image = white ? Properties.Resources.white_bishop : Properties.Resources.black_bishop; break;
-                    case Board.QUEENS:  pictureBox.Image = white ? Properties.Resources.white_queen  : Properties.Resources.black_queen ; break;
-                    case Board.KING:    pictureBox.Image = white ? Properties.Resources.white_king   : Properties.Resources.black_king  ; break;
-                    default:            pictureBox.Image = null; break;
+                    switch (piece)
+                    {
+                        case Board.PAWNS:   pictureBox.Image = white ? new Bitmap(Properties.Resources.white_pawn)
+                                                                     : new Bitmap(Properties.Resources.black_pawn);
+                                            break;
+                        case Board.ROOKS:   pictureBox.Image = white ? new Bitmap(Properties.Resources.white_rook)
+                                                                     : new Bitmap(Properties.Resources.black_rook);
+                                            break;
+                        case Board.KNIGHTS: pictureBox.Image = white ? new Bitmap(Properties.Resources.white_knight)
+                                                                     : new Bitmap(Properties.Resources.black_knight);
+                                            break;
+                        case Board.BISHOPS: pictureBox.Image = white ? new Bitmap(Properties.Resources.white_bishop)
+                                                                     : new Bitmap(Properties.Resources.black_bishop);
+                                            break;
+                        case Board.QUEENS:  pictureBox.Image = white ? new Bitmap(Properties.Resources.white_queen)
+                                                                     : new Bitmap(Properties.Resources.black_queen);
+                                            break;
+                        case Board.KING:    pictureBox.Image = white ? new Bitmap(Properties.Resources.white_king)
+                                                                     : new Bitmap(Properties.Resources.black_king);
+                                            break;
+                        default:            pictureBox.Image?.Dispose();
+                                            pictureBox.Image = null; 
+                                            break;
+                    }
                 }
             }
         }
@@ -80,7 +96,7 @@ namespace GUI
         private void RefreshStatusLabel()
         {
             string text = "Game is running";
-            if (VerificationController.IsStalemate(_board))                  text = "Stalemate";
+            if (VerificationController.IsStalemateFor(_board, _isPlayerPlayingWhite ? !_playerTurn : _playerTurn)) text = "Stalemate";
             if (VerificationController.IsCheckFor(_board, white: true))      text = "Check for white";
             if (VerificationController.IsCheckFor(_board, white: false))     text = "Check for black";
             if (VerificationController.IsCheckmateFor(_board, white: true))  text = "Black won";
@@ -214,6 +230,7 @@ namespace GUI
                     }
                     else
                     {
+                        _chosenPiece = null;
                         ChooseThisSquare(clickedSquare);
                     }
                 }
@@ -223,18 +240,19 @@ namespace GUI
                 }
             }
         }
-
+        
         private void buttonRestart_Click(object sender, EventArgs e)
         {
             _playerTurn  = true;
             _board       = new Board();
             _chosenPiece = null;
 
-            foreach (var (pictureBox, image) in _defaultGUIPosition)
+            foreach (var pictureBox in IterateAllPieces())
             {
-                pictureBox.Image     = image;
                 pictureBox.BackColor = DEFAULT_TRANSPARENT_COLOR;
             }
+
+            RefreshGameField();
         }
     }
 }
