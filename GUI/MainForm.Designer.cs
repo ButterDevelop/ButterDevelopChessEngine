@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             tableLayoutPanel = new TableLayoutPanel();
+            buttonNext = new Button();
+            buttonBack = new Button();
             tlpChess = new TableLayoutPanel();
             panelBackgroundH1 = new Panel();
             pbSquare0 = new PictureBox();
@@ -161,6 +163,49 @@
             pbSquare63 = new PictureBox();
             labelStatus = new Label();
             buttonRestart = new Button();
+            tlpDebug = new TableLayoutPanel();
+            panelDebugWhitePawns = new Panel();
+            labelDebugWhitePawns = new Label();
+            textBoxDebugWhitePawns = new TextBox();
+            panelDebugWhiteKnights = new Panel();
+            textBoxDebugWhiteKnights = new TextBox();
+            labelDebugWhiteKnights = new Label();
+            panelDebugWhiteBishops = new Panel();
+            textBoxDebugWhiteBishops = new TextBox();
+            labelDebugWhiteBishops = new Label();
+            panelDebugWhiteQueens = new Panel();
+            textBoxDebugWhiteQueens = new TextBox();
+            labelDebugWhiteQueens = new Label();
+            panelDebugWhiteKing = new Panel();
+            textBoxDebugWhiteKing = new TextBox();
+            labelDebugWhiteKing = new Label();
+            panelDebugWhiteRooks = new Panel();
+            textBoxDebugWhiteRooks = new TextBox();
+            labelDebugWhiteRooks = new Label();
+            panelDebugWhiteWhole = new Panel();
+            textBoxDebugWhiteWhole = new TextBox();
+            labelDebugWhiteWhole = new Label();
+            panelDebugBlackPawns = new Panel();
+            textBoxDebugBlackPawns = new TextBox();
+            labelDebugBlackPawns = new Label();
+            panelDebugBlackRooks = new Panel();
+            textBoxDebugBlackRooks = new TextBox();
+            labelDebugBlackRooks = new Label();
+            panelDebugBlackKnights = new Panel();
+            textBoxDebugBlackKnights = new TextBox();
+            labelDebugBlackKnights = new Label();
+            panelDebugBlackBishops = new Panel();
+            textBoxDebugBlackBishops = new TextBox();
+            labelDebugBlackBishops = new Label();
+            panelDebugBlackQueens = new Panel();
+            textBoxDebugBlackQueens = new TextBox();
+            labelDebugBlackQueens = new Label();
+            panelDebugBlackKing = new Panel();
+            textBoxDebugBlackKing = new TextBox();
+            labelDebugBlackKing = new Label();
+            panelDebugBlackWhole = new Panel();
+            textBoxDebugBlackWhole = new TextBox();
+            labelDebugBlackWhole = new Label();
             tableLayoutPanel.SuspendLayout();
             tlpChess.SuspendLayout();
             panelBackgroundH1.SuspendLayout();
@@ -291,16 +336,35 @@
             ((System.ComponentModel.ISupportInitialize)pbSquare62).BeginInit();
             panelBackgroundA8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbSquare63).BeginInit();
+            tlpDebug.SuspendLayout();
+            panelDebugWhitePawns.SuspendLayout();
+            panelDebugWhiteKnights.SuspendLayout();
+            panelDebugWhiteBishops.SuspendLayout();
+            panelDebugWhiteQueens.SuspendLayout();
+            panelDebugWhiteKing.SuspendLayout();
+            panelDebugWhiteRooks.SuspendLayout();
+            panelDebugWhiteWhole.SuspendLayout();
+            panelDebugBlackPawns.SuspendLayout();
+            panelDebugBlackRooks.SuspendLayout();
+            panelDebugBlackKnights.SuspendLayout();
+            panelDebugBlackBishops.SuspendLayout();
+            panelDebugBlackQueens.SuspendLayout();
+            panelDebugBlackKing.SuspendLayout();
+            panelDebugBlackWhole.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel
             // 
-            tableLayoutPanel.ColumnCount = 2;
-            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 75F));
-            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel.ColumnCount = 3;
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 37.5F));
+            tableLayoutPanel.Controls.Add(buttonNext, 1, 3);
+            tableLayoutPanel.Controls.Add(buttonBack, 1, 2);
             tableLayoutPanel.Controls.Add(tlpChess, 0, 0);
             tableLayoutPanel.Controls.Add(labelStatus, 1, 0);
             tableLayoutPanel.Controls.Add(buttonRestart, 1, 1);
+            tableLayoutPanel.Controls.Add(tlpDebug, 2, 0);
             tableLayoutPanel.Dock = DockStyle.Fill;
             tableLayoutPanel.Location = new Point(0, 0);
             tableLayoutPanel.Margin = new Padding(0);
@@ -314,8 +378,88 @@
             tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
             tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
             tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel.Size = new Size(1178, 844);
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.Size = new Size(1778, 844);
             tableLayoutPanel.TabIndex = 0;
+            // 
+            // buttonNext
+            // 
+            buttonNext.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            buttonNext.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonNext.Location = new Point(892, 350);
+            buttonNext.Name = "buttonNext";
+            buttonNext.Size = new Size(216, 34);
+            buttonNext.TabIndex = 4;
+            buttonNext.Text = "Next >";
+            buttonNext.UseVisualStyleBackColor = true;
+            buttonNext.Click += buttonNext_Click;
+            // 
+            // buttonBack
+            // 
+            buttonBack.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            buttonBack.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonBack.Location = new Point(892, 245);
+            buttonBack.Name = "buttonBack";
+            buttonBack.Size = new Size(216, 34);
+            buttonBack.TabIndex = 3;
+            buttonBack.Text = "< Back";
+            buttonBack.UseVisualStyleBackColor = true;
+            buttonBack.Click += buttonBack_Click;
             // 
             // tlpChess
             // 
@@ -406,7 +550,7 @@
             tlpChess.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
             tlpChess.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
             tlpChess.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tlpChess.Size = new Size(883, 844);
+            tlpChess.Size = new Size(889, 844);
             tlpChess.TabIndex = 0;
             // 
             // panelBackgroundH1
@@ -414,10 +558,10 @@
             panelBackgroundH1.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundH1.Controls.Add(pbSquare0);
             panelBackgroundH1.Dock = DockStyle.Fill;
-            panelBackgroundH1.Location = new Point(770, 735);
+            panelBackgroundH1.Location = new Point(777, 735);
             panelBackgroundH1.Margin = new Padding(0);
             panelBackgroundH1.Name = "panelBackgroundH1";
-            panelBackgroundH1.Size = new Size(113, 109);
+            panelBackgroundH1.Size = new Size(112, 109);
             panelBackgroundH1.TabIndex = 63;
             // 
             // pbSquare0
@@ -428,7 +572,7 @@
             pbSquare0.Location = new Point(0, 0);
             pbSquare0.Margin = new Padding(0);
             pbSquare0.Name = "pbSquare0";
-            pbSquare0.Size = new Size(113, 109);
+            pbSquare0.Size = new Size(112, 109);
             pbSquare0.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare0.TabIndex = 2;
             pbSquare0.TabStop = false;
@@ -439,10 +583,10 @@
             panelBackgroundG1.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundG1.Controls.Add(pbSquare1);
             panelBackgroundG1.Dock = DockStyle.Fill;
-            panelBackgroundG1.Location = new Point(660, 735);
+            panelBackgroundG1.Location = new Point(666, 735);
             panelBackgroundG1.Margin = new Padding(0);
             panelBackgroundG1.Name = "panelBackgroundG1";
-            panelBackgroundG1.Size = new Size(110, 109);
+            panelBackgroundG1.Size = new Size(111, 109);
             panelBackgroundG1.TabIndex = 62;
             // 
             // pbSquare1
@@ -453,7 +597,7 @@
             pbSquare1.Location = new Point(0, 0);
             pbSquare1.Margin = new Padding(0);
             pbSquare1.Name = "pbSquare1";
-            pbSquare1.Size = new Size(110, 109);
+            pbSquare1.Size = new Size(111, 109);
             pbSquare1.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare1.TabIndex = 2;
             pbSquare1.TabStop = false;
@@ -464,10 +608,10 @@
             panelBackgroundF1.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundF1.Controls.Add(pbSquare2);
             panelBackgroundF1.Dock = DockStyle.Fill;
-            panelBackgroundF1.Location = new Point(550, 735);
+            panelBackgroundF1.Location = new Point(555, 735);
             panelBackgroundF1.Margin = new Padding(0);
             panelBackgroundF1.Name = "panelBackgroundF1";
-            panelBackgroundF1.Size = new Size(110, 109);
+            panelBackgroundF1.Size = new Size(111, 109);
             panelBackgroundF1.TabIndex = 61;
             // 
             // pbSquare2
@@ -478,7 +622,7 @@
             pbSquare2.Location = new Point(0, 0);
             pbSquare2.Margin = new Padding(0);
             pbSquare2.Name = "pbSquare2";
-            pbSquare2.Size = new Size(110, 109);
+            pbSquare2.Size = new Size(111, 109);
             pbSquare2.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare2.TabIndex = 2;
             pbSquare2.TabStop = false;
@@ -489,10 +633,10 @@
             panelBackgroundE1.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundE1.Controls.Add(pbSquare3);
             panelBackgroundE1.Dock = DockStyle.Fill;
-            panelBackgroundE1.Location = new Point(440, 735);
+            panelBackgroundE1.Location = new Point(444, 735);
             panelBackgroundE1.Margin = new Padding(0);
             panelBackgroundE1.Name = "panelBackgroundE1";
-            panelBackgroundE1.Size = new Size(110, 109);
+            panelBackgroundE1.Size = new Size(111, 109);
             panelBackgroundE1.TabIndex = 60;
             // 
             // pbSquare3
@@ -503,7 +647,7 @@
             pbSquare3.Location = new Point(0, 0);
             pbSquare3.Margin = new Padding(0);
             pbSquare3.Name = "pbSquare3";
-            pbSquare3.Size = new Size(110, 109);
+            pbSquare3.Size = new Size(111, 109);
             pbSquare3.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare3.TabIndex = 2;
             pbSquare3.TabStop = false;
@@ -514,10 +658,10 @@
             panelBackgroundD1.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundD1.Controls.Add(pbSquare4);
             panelBackgroundD1.Dock = DockStyle.Fill;
-            panelBackgroundD1.Location = new Point(330, 735);
+            panelBackgroundD1.Location = new Point(333, 735);
             panelBackgroundD1.Margin = new Padding(0);
             panelBackgroundD1.Name = "panelBackgroundD1";
-            panelBackgroundD1.Size = new Size(110, 109);
+            panelBackgroundD1.Size = new Size(111, 109);
             panelBackgroundD1.TabIndex = 59;
             // 
             // pbSquare4
@@ -528,7 +672,7 @@
             pbSquare4.Location = new Point(0, 0);
             pbSquare4.Margin = new Padding(0);
             pbSquare4.Name = "pbSquare4";
-            pbSquare4.Size = new Size(110, 109);
+            pbSquare4.Size = new Size(111, 109);
             pbSquare4.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare4.TabIndex = 2;
             pbSquare4.TabStop = false;
@@ -539,10 +683,10 @@
             panelBackgroundC1.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundC1.Controls.Add(pbSquare5);
             panelBackgroundC1.Dock = DockStyle.Fill;
-            panelBackgroundC1.Location = new Point(220, 735);
+            panelBackgroundC1.Location = new Point(222, 735);
             panelBackgroundC1.Margin = new Padding(0);
             panelBackgroundC1.Name = "panelBackgroundC1";
-            panelBackgroundC1.Size = new Size(110, 109);
+            panelBackgroundC1.Size = new Size(111, 109);
             panelBackgroundC1.TabIndex = 58;
             // 
             // pbSquare5
@@ -553,7 +697,7 @@
             pbSquare5.Location = new Point(0, 0);
             pbSquare5.Margin = new Padding(0);
             pbSquare5.Name = "pbSquare5";
-            pbSquare5.Size = new Size(110, 109);
+            pbSquare5.Size = new Size(111, 109);
             pbSquare5.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare5.TabIndex = 2;
             pbSquare5.TabStop = false;
@@ -564,10 +708,10 @@
             panelBackgroundB1.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundB1.Controls.Add(pbSquare6);
             panelBackgroundB1.Dock = DockStyle.Fill;
-            panelBackgroundB1.Location = new Point(110, 735);
+            panelBackgroundB1.Location = new Point(111, 735);
             panelBackgroundB1.Margin = new Padding(0);
             panelBackgroundB1.Name = "panelBackgroundB1";
-            panelBackgroundB1.Size = new Size(110, 109);
+            panelBackgroundB1.Size = new Size(111, 109);
             panelBackgroundB1.TabIndex = 57;
             // 
             // pbSquare6
@@ -578,7 +722,7 @@
             pbSquare6.Location = new Point(0, 0);
             pbSquare6.Margin = new Padding(0);
             pbSquare6.Name = "pbSquare6";
-            pbSquare6.Size = new Size(110, 109);
+            pbSquare6.Size = new Size(111, 109);
             pbSquare6.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare6.TabIndex = 2;
             pbSquare6.TabStop = false;
@@ -592,7 +736,7 @@
             panelBackgroundA1.Location = new Point(0, 735);
             panelBackgroundA1.Margin = new Padding(0);
             panelBackgroundA1.Name = "panelBackgroundA1";
-            panelBackgroundA1.Size = new Size(110, 109);
+            panelBackgroundA1.Size = new Size(111, 109);
             panelBackgroundA1.TabIndex = 56;
             // 
             // pbSquare7
@@ -603,7 +747,7 @@
             pbSquare7.Location = new Point(0, 0);
             pbSquare7.Margin = new Padding(0);
             pbSquare7.Name = "pbSquare7";
-            pbSquare7.Size = new Size(110, 109);
+            pbSquare7.Size = new Size(111, 109);
             pbSquare7.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare7.TabIndex = 1;
             pbSquare7.TabStop = false;
@@ -614,10 +758,10 @@
             panelBackgroundH2.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundH2.Controls.Add(pbSquare8);
             panelBackgroundH2.Dock = DockStyle.Fill;
-            panelBackgroundH2.Location = new Point(770, 630);
+            panelBackgroundH2.Location = new Point(777, 630);
             panelBackgroundH2.Margin = new Padding(0);
             panelBackgroundH2.Name = "panelBackgroundH2";
-            panelBackgroundH2.Size = new Size(113, 105);
+            panelBackgroundH2.Size = new Size(112, 105);
             panelBackgroundH2.TabIndex = 55;
             // 
             // pbSquare8
@@ -628,7 +772,7 @@
             pbSquare8.Location = new Point(0, 0);
             pbSquare8.Margin = new Padding(0);
             pbSquare8.Name = "pbSquare8";
-            pbSquare8.Size = new Size(113, 105);
+            pbSquare8.Size = new Size(112, 105);
             pbSquare8.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare8.TabIndex = 2;
             pbSquare8.TabStop = false;
@@ -639,10 +783,10 @@
             panelBackgroundG2.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundG2.Controls.Add(pbSquare9);
             panelBackgroundG2.Dock = DockStyle.Fill;
-            panelBackgroundG2.Location = new Point(660, 630);
+            panelBackgroundG2.Location = new Point(666, 630);
             panelBackgroundG2.Margin = new Padding(0);
             panelBackgroundG2.Name = "panelBackgroundG2";
-            panelBackgroundG2.Size = new Size(110, 105);
+            panelBackgroundG2.Size = new Size(111, 105);
             panelBackgroundG2.TabIndex = 54;
             // 
             // pbSquare9
@@ -653,7 +797,7 @@
             pbSquare9.Location = new Point(0, 0);
             pbSquare9.Margin = new Padding(0);
             pbSquare9.Name = "pbSquare9";
-            pbSquare9.Size = new Size(110, 105);
+            pbSquare9.Size = new Size(111, 105);
             pbSquare9.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare9.TabIndex = 2;
             pbSquare9.TabStop = false;
@@ -664,10 +808,10 @@
             panelBackgroundF2.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundF2.Controls.Add(pbSquare10);
             panelBackgroundF2.Dock = DockStyle.Fill;
-            panelBackgroundF2.Location = new Point(550, 630);
+            panelBackgroundF2.Location = new Point(555, 630);
             panelBackgroundF2.Margin = new Padding(0);
             panelBackgroundF2.Name = "panelBackgroundF2";
-            panelBackgroundF2.Size = new Size(110, 105);
+            panelBackgroundF2.Size = new Size(111, 105);
             panelBackgroundF2.TabIndex = 53;
             // 
             // pbSquare10
@@ -678,7 +822,7 @@
             pbSquare10.Location = new Point(0, 0);
             pbSquare10.Margin = new Padding(0);
             pbSquare10.Name = "pbSquare10";
-            pbSquare10.Size = new Size(110, 105);
+            pbSquare10.Size = new Size(111, 105);
             pbSquare10.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare10.TabIndex = 2;
             pbSquare10.TabStop = false;
@@ -689,10 +833,10 @@
             panelBackgroundE2.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundE2.Controls.Add(pbSquare11);
             panelBackgroundE2.Dock = DockStyle.Fill;
-            panelBackgroundE2.Location = new Point(440, 630);
+            panelBackgroundE2.Location = new Point(444, 630);
             panelBackgroundE2.Margin = new Padding(0);
             panelBackgroundE2.Name = "panelBackgroundE2";
-            panelBackgroundE2.Size = new Size(110, 105);
+            panelBackgroundE2.Size = new Size(111, 105);
             panelBackgroundE2.TabIndex = 52;
             // 
             // pbSquare11
@@ -703,7 +847,7 @@
             pbSquare11.Location = new Point(0, 0);
             pbSquare11.Margin = new Padding(0);
             pbSquare11.Name = "pbSquare11";
-            pbSquare11.Size = new Size(110, 105);
+            pbSquare11.Size = new Size(111, 105);
             pbSquare11.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare11.TabIndex = 2;
             pbSquare11.TabStop = false;
@@ -714,10 +858,10 @@
             panelBackgroundD2.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundD2.Controls.Add(pbSquare12);
             panelBackgroundD2.Dock = DockStyle.Fill;
-            panelBackgroundD2.Location = new Point(330, 630);
+            panelBackgroundD2.Location = new Point(333, 630);
             panelBackgroundD2.Margin = new Padding(0);
             panelBackgroundD2.Name = "panelBackgroundD2";
-            panelBackgroundD2.Size = new Size(110, 105);
+            panelBackgroundD2.Size = new Size(111, 105);
             panelBackgroundD2.TabIndex = 51;
             // 
             // pbSquare12
@@ -728,7 +872,7 @@
             pbSquare12.Location = new Point(0, 0);
             pbSquare12.Margin = new Padding(0);
             pbSquare12.Name = "pbSquare12";
-            pbSquare12.Size = new Size(110, 105);
+            pbSquare12.Size = new Size(111, 105);
             pbSquare12.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare12.TabIndex = 2;
             pbSquare12.TabStop = false;
@@ -739,10 +883,10 @@
             panelBackgroundC2.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundC2.Controls.Add(pbSquare13);
             panelBackgroundC2.Dock = DockStyle.Fill;
-            panelBackgroundC2.Location = new Point(220, 630);
+            panelBackgroundC2.Location = new Point(222, 630);
             panelBackgroundC2.Margin = new Padding(0);
             panelBackgroundC2.Name = "panelBackgroundC2";
-            panelBackgroundC2.Size = new Size(110, 105);
+            panelBackgroundC2.Size = new Size(111, 105);
             panelBackgroundC2.TabIndex = 50;
             // 
             // pbSquare13
@@ -753,7 +897,7 @@
             pbSquare13.Location = new Point(0, 0);
             pbSquare13.Margin = new Padding(0);
             pbSquare13.Name = "pbSquare13";
-            pbSquare13.Size = new Size(110, 105);
+            pbSquare13.Size = new Size(111, 105);
             pbSquare13.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare13.TabIndex = 2;
             pbSquare13.TabStop = false;
@@ -764,10 +908,10 @@
             panelBackgroundB2.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundB2.Controls.Add(pbSquare14);
             panelBackgroundB2.Dock = DockStyle.Fill;
-            panelBackgroundB2.Location = new Point(110, 630);
+            panelBackgroundB2.Location = new Point(111, 630);
             panelBackgroundB2.Margin = new Padding(0);
             panelBackgroundB2.Name = "panelBackgroundB2";
-            panelBackgroundB2.Size = new Size(110, 105);
+            panelBackgroundB2.Size = new Size(111, 105);
             panelBackgroundB2.TabIndex = 49;
             // 
             // pbSquare14
@@ -778,7 +922,7 @@
             pbSquare14.Location = new Point(0, 0);
             pbSquare14.Margin = new Padding(0);
             pbSquare14.Name = "pbSquare14";
-            pbSquare14.Size = new Size(110, 105);
+            pbSquare14.Size = new Size(111, 105);
             pbSquare14.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare14.TabIndex = 2;
             pbSquare14.TabStop = false;
@@ -792,7 +936,7 @@
             panelBackgroundA2.Location = new Point(0, 630);
             panelBackgroundA2.Margin = new Padding(0);
             panelBackgroundA2.Name = "panelBackgroundA2";
-            panelBackgroundA2.Size = new Size(110, 105);
+            panelBackgroundA2.Size = new Size(111, 105);
             panelBackgroundA2.TabIndex = 48;
             // 
             // pbSquare15
@@ -803,7 +947,7 @@
             pbSquare15.Location = new Point(0, 0);
             pbSquare15.Margin = new Padding(0);
             pbSquare15.Name = "pbSquare15";
-            pbSquare15.Size = new Size(110, 105);
+            pbSquare15.Size = new Size(111, 105);
             pbSquare15.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare15.TabIndex = 2;
             pbSquare15.TabStop = false;
@@ -814,10 +958,10 @@
             panelBackgroundH3.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundH3.Controls.Add(pbSquare16);
             panelBackgroundH3.Dock = DockStyle.Fill;
-            panelBackgroundH3.Location = new Point(770, 525);
+            panelBackgroundH3.Location = new Point(777, 525);
             panelBackgroundH3.Margin = new Padding(0);
             panelBackgroundH3.Name = "panelBackgroundH3";
-            panelBackgroundH3.Size = new Size(113, 105);
+            panelBackgroundH3.Size = new Size(112, 105);
             panelBackgroundH3.TabIndex = 47;
             // 
             // pbSquare16
@@ -827,7 +971,7 @@
             pbSquare16.Location = new Point(0, 0);
             pbSquare16.Margin = new Padding(0);
             pbSquare16.Name = "pbSquare16";
-            pbSquare16.Size = new Size(113, 105);
+            pbSquare16.Size = new Size(112, 105);
             pbSquare16.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare16.TabIndex = 3;
             pbSquare16.TabStop = false;
@@ -838,10 +982,10 @@
             panelBackgroundG3.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundG3.Controls.Add(pbSquare17);
             panelBackgroundG3.Dock = DockStyle.Fill;
-            panelBackgroundG3.Location = new Point(660, 525);
+            panelBackgroundG3.Location = new Point(666, 525);
             panelBackgroundG3.Margin = new Padding(0);
             panelBackgroundG3.Name = "panelBackgroundG3";
-            panelBackgroundG3.Size = new Size(110, 105);
+            panelBackgroundG3.Size = new Size(111, 105);
             panelBackgroundG3.TabIndex = 46;
             // 
             // pbSquare17
@@ -851,7 +995,7 @@
             pbSquare17.Location = new Point(0, 0);
             pbSquare17.Margin = new Padding(0);
             pbSquare17.Name = "pbSquare17";
-            pbSquare17.Size = new Size(110, 105);
+            pbSquare17.Size = new Size(111, 105);
             pbSquare17.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare17.TabIndex = 3;
             pbSquare17.TabStop = false;
@@ -862,10 +1006,10 @@
             panelBackgroundF3.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundF3.Controls.Add(pbSquare18);
             panelBackgroundF3.Dock = DockStyle.Fill;
-            panelBackgroundF3.Location = new Point(550, 525);
+            panelBackgroundF3.Location = new Point(555, 525);
             panelBackgroundF3.Margin = new Padding(0);
             panelBackgroundF3.Name = "panelBackgroundF3";
-            panelBackgroundF3.Size = new Size(110, 105);
+            panelBackgroundF3.Size = new Size(111, 105);
             panelBackgroundF3.TabIndex = 45;
             // 
             // pbSquare18
@@ -875,7 +1019,7 @@
             pbSquare18.Location = new Point(0, 0);
             pbSquare18.Margin = new Padding(0);
             pbSquare18.Name = "pbSquare18";
-            pbSquare18.Size = new Size(110, 105);
+            pbSquare18.Size = new Size(111, 105);
             pbSquare18.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare18.TabIndex = 3;
             pbSquare18.TabStop = false;
@@ -886,10 +1030,10 @@
             panelBackgroundE3.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundE3.Controls.Add(pbSquare19);
             panelBackgroundE3.Dock = DockStyle.Fill;
-            panelBackgroundE3.Location = new Point(440, 525);
+            panelBackgroundE3.Location = new Point(444, 525);
             panelBackgroundE3.Margin = new Padding(0);
             panelBackgroundE3.Name = "panelBackgroundE3";
-            panelBackgroundE3.Size = new Size(110, 105);
+            panelBackgroundE3.Size = new Size(111, 105);
             panelBackgroundE3.TabIndex = 44;
             // 
             // pbSquare19
@@ -899,7 +1043,7 @@
             pbSquare19.Location = new Point(0, 0);
             pbSquare19.Margin = new Padding(0);
             pbSquare19.Name = "pbSquare19";
-            pbSquare19.Size = new Size(110, 105);
+            pbSquare19.Size = new Size(111, 105);
             pbSquare19.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare19.TabIndex = 3;
             pbSquare19.TabStop = false;
@@ -910,10 +1054,10 @@
             panelBackgroundD3.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundD3.Controls.Add(pbSquare20);
             panelBackgroundD3.Dock = DockStyle.Fill;
-            panelBackgroundD3.Location = new Point(330, 525);
+            panelBackgroundD3.Location = new Point(333, 525);
             panelBackgroundD3.Margin = new Padding(0);
             panelBackgroundD3.Name = "panelBackgroundD3";
-            panelBackgroundD3.Size = new Size(110, 105);
+            panelBackgroundD3.Size = new Size(111, 105);
             panelBackgroundD3.TabIndex = 43;
             // 
             // pbSquare20
@@ -923,7 +1067,7 @@
             pbSquare20.Location = new Point(0, 0);
             pbSquare20.Margin = new Padding(0);
             pbSquare20.Name = "pbSquare20";
-            pbSquare20.Size = new Size(110, 105);
+            pbSquare20.Size = new Size(111, 105);
             pbSquare20.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare20.TabIndex = 3;
             pbSquare20.TabStop = false;
@@ -934,10 +1078,10 @@
             panelBackgroundC3.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundC3.Controls.Add(pbSquare21);
             panelBackgroundC3.Dock = DockStyle.Fill;
-            panelBackgroundC3.Location = new Point(220, 525);
+            panelBackgroundC3.Location = new Point(222, 525);
             panelBackgroundC3.Margin = new Padding(0);
             panelBackgroundC3.Name = "panelBackgroundC3";
-            panelBackgroundC3.Size = new Size(110, 105);
+            panelBackgroundC3.Size = new Size(111, 105);
             panelBackgroundC3.TabIndex = 42;
             // 
             // pbSquare21
@@ -947,7 +1091,7 @@
             pbSquare21.Location = new Point(0, 0);
             pbSquare21.Margin = new Padding(0);
             pbSquare21.Name = "pbSquare21";
-            pbSquare21.Size = new Size(110, 105);
+            pbSquare21.Size = new Size(111, 105);
             pbSquare21.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare21.TabIndex = 3;
             pbSquare21.TabStop = false;
@@ -958,10 +1102,10 @@
             panelBackgroundB3.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundB3.Controls.Add(pbSquare22);
             panelBackgroundB3.Dock = DockStyle.Fill;
-            panelBackgroundB3.Location = new Point(110, 525);
+            panelBackgroundB3.Location = new Point(111, 525);
             panelBackgroundB3.Margin = new Padding(0);
             panelBackgroundB3.Name = "panelBackgroundB3";
-            panelBackgroundB3.Size = new Size(110, 105);
+            panelBackgroundB3.Size = new Size(111, 105);
             panelBackgroundB3.TabIndex = 41;
             // 
             // pbSquare22
@@ -971,7 +1115,7 @@
             pbSquare22.Location = new Point(0, 0);
             pbSquare22.Margin = new Padding(0);
             pbSquare22.Name = "pbSquare22";
-            pbSquare22.Size = new Size(110, 105);
+            pbSquare22.Size = new Size(111, 105);
             pbSquare22.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare22.TabIndex = 3;
             pbSquare22.TabStop = false;
@@ -985,7 +1129,7 @@
             panelBackgroundA3.Location = new Point(0, 525);
             panelBackgroundA3.Margin = new Padding(0);
             panelBackgroundA3.Name = "panelBackgroundA3";
-            panelBackgroundA3.Size = new Size(110, 105);
+            panelBackgroundA3.Size = new Size(111, 105);
             panelBackgroundA3.TabIndex = 40;
             // 
             // pbSquare23
@@ -995,7 +1139,7 @@
             pbSquare23.Location = new Point(0, 0);
             pbSquare23.Margin = new Padding(0);
             pbSquare23.Name = "pbSquare23";
-            pbSquare23.Size = new Size(110, 105);
+            pbSquare23.Size = new Size(111, 105);
             pbSquare23.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare23.TabIndex = 3;
             pbSquare23.TabStop = false;
@@ -1006,10 +1150,10 @@
             panelBackgroundH4.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundH4.Controls.Add(pbSquare24);
             panelBackgroundH4.Dock = DockStyle.Fill;
-            panelBackgroundH4.Location = new Point(770, 420);
+            panelBackgroundH4.Location = new Point(777, 420);
             panelBackgroundH4.Margin = new Padding(0);
             panelBackgroundH4.Name = "panelBackgroundH4";
-            panelBackgroundH4.Size = new Size(113, 105);
+            panelBackgroundH4.Size = new Size(112, 105);
             panelBackgroundH4.TabIndex = 39;
             // 
             // pbSquare24
@@ -1019,7 +1163,7 @@
             pbSquare24.Location = new Point(0, 0);
             pbSquare24.Margin = new Padding(0);
             pbSquare24.Name = "pbSquare24";
-            pbSquare24.Size = new Size(113, 105);
+            pbSquare24.Size = new Size(112, 105);
             pbSquare24.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare24.TabIndex = 3;
             pbSquare24.TabStop = false;
@@ -1030,10 +1174,10 @@
             panelBackgroundG4.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundG4.Controls.Add(pbSquare25);
             panelBackgroundG4.Dock = DockStyle.Fill;
-            panelBackgroundG4.Location = new Point(660, 420);
+            panelBackgroundG4.Location = new Point(666, 420);
             panelBackgroundG4.Margin = new Padding(0);
             panelBackgroundG4.Name = "panelBackgroundG4";
-            panelBackgroundG4.Size = new Size(110, 105);
+            panelBackgroundG4.Size = new Size(111, 105);
             panelBackgroundG4.TabIndex = 38;
             // 
             // pbSquare25
@@ -1043,7 +1187,7 @@
             pbSquare25.Location = new Point(0, 0);
             pbSquare25.Margin = new Padding(0);
             pbSquare25.Name = "pbSquare25";
-            pbSquare25.Size = new Size(110, 105);
+            pbSquare25.Size = new Size(111, 105);
             pbSquare25.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare25.TabIndex = 3;
             pbSquare25.TabStop = false;
@@ -1054,10 +1198,10 @@
             panelBackgroundF4.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundF4.Controls.Add(pbSquare26);
             panelBackgroundF4.Dock = DockStyle.Fill;
-            panelBackgroundF4.Location = new Point(550, 420);
+            panelBackgroundF4.Location = new Point(555, 420);
             panelBackgroundF4.Margin = new Padding(0);
             panelBackgroundF4.Name = "panelBackgroundF4";
-            panelBackgroundF4.Size = new Size(110, 105);
+            panelBackgroundF4.Size = new Size(111, 105);
             panelBackgroundF4.TabIndex = 37;
             // 
             // pbSquare26
@@ -1067,7 +1211,7 @@
             pbSquare26.Location = new Point(0, 0);
             pbSquare26.Margin = new Padding(0);
             pbSquare26.Name = "pbSquare26";
-            pbSquare26.Size = new Size(110, 105);
+            pbSquare26.Size = new Size(111, 105);
             pbSquare26.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare26.TabIndex = 3;
             pbSquare26.TabStop = false;
@@ -1078,10 +1222,10 @@
             panelBackgroundE4.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundE4.Controls.Add(pbSquare27);
             panelBackgroundE4.Dock = DockStyle.Fill;
-            panelBackgroundE4.Location = new Point(440, 420);
+            panelBackgroundE4.Location = new Point(444, 420);
             panelBackgroundE4.Margin = new Padding(0);
             panelBackgroundE4.Name = "panelBackgroundE4";
-            panelBackgroundE4.Size = new Size(110, 105);
+            panelBackgroundE4.Size = new Size(111, 105);
             panelBackgroundE4.TabIndex = 36;
             // 
             // pbSquare27
@@ -1091,7 +1235,7 @@
             pbSquare27.Location = new Point(0, 0);
             pbSquare27.Margin = new Padding(0);
             pbSquare27.Name = "pbSquare27";
-            pbSquare27.Size = new Size(110, 105);
+            pbSquare27.Size = new Size(111, 105);
             pbSquare27.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare27.TabIndex = 3;
             pbSquare27.TabStop = false;
@@ -1102,10 +1246,10 @@
             panelBackgroundD4.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundD4.Controls.Add(pbSquare28);
             panelBackgroundD4.Dock = DockStyle.Fill;
-            panelBackgroundD4.Location = new Point(330, 420);
+            panelBackgroundD4.Location = new Point(333, 420);
             panelBackgroundD4.Margin = new Padding(0);
             panelBackgroundD4.Name = "panelBackgroundD4";
-            panelBackgroundD4.Size = new Size(110, 105);
+            panelBackgroundD4.Size = new Size(111, 105);
             panelBackgroundD4.TabIndex = 35;
             // 
             // pbSquare28
@@ -1115,7 +1259,7 @@
             pbSquare28.Location = new Point(0, 0);
             pbSquare28.Margin = new Padding(0);
             pbSquare28.Name = "pbSquare28";
-            pbSquare28.Size = new Size(110, 105);
+            pbSquare28.Size = new Size(111, 105);
             pbSquare28.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare28.TabIndex = 3;
             pbSquare28.TabStop = false;
@@ -1126,10 +1270,10 @@
             panelBackgroundC4.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundC4.Controls.Add(pbSquare29);
             panelBackgroundC4.Dock = DockStyle.Fill;
-            panelBackgroundC4.Location = new Point(220, 420);
+            panelBackgroundC4.Location = new Point(222, 420);
             panelBackgroundC4.Margin = new Padding(0);
             panelBackgroundC4.Name = "panelBackgroundC4";
-            panelBackgroundC4.Size = new Size(110, 105);
+            panelBackgroundC4.Size = new Size(111, 105);
             panelBackgroundC4.TabIndex = 34;
             // 
             // pbSquare29
@@ -1139,7 +1283,7 @@
             pbSquare29.Location = new Point(0, 0);
             pbSquare29.Margin = new Padding(0);
             pbSquare29.Name = "pbSquare29";
-            pbSquare29.Size = new Size(110, 105);
+            pbSquare29.Size = new Size(111, 105);
             pbSquare29.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare29.TabIndex = 3;
             pbSquare29.TabStop = false;
@@ -1150,10 +1294,10 @@
             panelBackgroundB4.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundB4.Controls.Add(pbSquare30);
             panelBackgroundB4.Dock = DockStyle.Fill;
-            panelBackgroundB4.Location = new Point(110, 420);
+            panelBackgroundB4.Location = new Point(111, 420);
             panelBackgroundB4.Margin = new Padding(0);
             panelBackgroundB4.Name = "panelBackgroundB4";
-            panelBackgroundB4.Size = new Size(110, 105);
+            panelBackgroundB4.Size = new Size(111, 105);
             panelBackgroundB4.TabIndex = 33;
             // 
             // pbSquare30
@@ -1163,7 +1307,7 @@
             pbSquare30.Location = new Point(0, 0);
             pbSquare30.Margin = new Padding(0);
             pbSquare30.Name = "pbSquare30";
-            pbSquare30.Size = new Size(110, 105);
+            pbSquare30.Size = new Size(111, 105);
             pbSquare30.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare30.TabIndex = 3;
             pbSquare30.TabStop = false;
@@ -1177,7 +1321,7 @@
             panelBackgroundA4.Location = new Point(0, 420);
             panelBackgroundA4.Margin = new Padding(0);
             panelBackgroundA4.Name = "panelBackgroundA4";
-            panelBackgroundA4.Size = new Size(110, 105);
+            panelBackgroundA4.Size = new Size(111, 105);
             panelBackgroundA4.TabIndex = 32;
             // 
             // pbSquare31
@@ -1187,7 +1331,7 @@
             pbSquare31.Location = new Point(0, 0);
             pbSquare31.Margin = new Padding(0);
             pbSquare31.Name = "pbSquare31";
-            pbSquare31.Size = new Size(110, 105);
+            pbSquare31.Size = new Size(111, 105);
             pbSquare31.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare31.TabIndex = 3;
             pbSquare31.TabStop = false;
@@ -1198,10 +1342,10 @@
             panelBackgroundH5.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundH5.Controls.Add(pbSquare32);
             panelBackgroundH5.Dock = DockStyle.Fill;
-            panelBackgroundH5.Location = new Point(770, 315);
+            panelBackgroundH5.Location = new Point(777, 315);
             panelBackgroundH5.Margin = new Padding(0);
             panelBackgroundH5.Name = "panelBackgroundH5";
-            panelBackgroundH5.Size = new Size(113, 105);
+            panelBackgroundH5.Size = new Size(112, 105);
             panelBackgroundH5.TabIndex = 31;
             // 
             // pbSquare32
@@ -1211,7 +1355,7 @@
             pbSquare32.Location = new Point(0, 0);
             pbSquare32.Margin = new Padding(0);
             pbSquare32.Name = "pbSquare32";
-            pbSquare32.Size = new Size(113, 105);
+            pbSquare32.Size = new Size(112, 105);
             pbSquare32.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare32.TabIndex = 3;
             pbSquare32.TabStop = false;
@@ -1222,10 +1366,10 @@
             panelBackgroundG5.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundG5.Controls.Add(pbSquare33);
             panelBackgroundG5.Dock = DockStyle.Fill;
-            panelBackgroundG5.Location = new Point(660, 315);
+            panelBackgroundG5.Location = new Point(666, 315);
             panelBackgroundG5.Margin = new Padding(0);
             panelBackgroundG5.Name = "panelBackgroundG5";
-            panelBackgroundG5.Size = new Size(110, 105);
+            panelBackgroundG5.Size = new Size(111, 105);
             panelBackgroundG5.TabIndex = 30;
             // 
             // pbSquare33
@@ -1235,7 +1379,7 @@
             pbSquare33.Location = new Point(0, 0);
             pbSquare33.Margin = new Padding(0);
             pbSquare33.Name = "pbSquare33";
-            pbSquare33.Size = new Size(110, 105);
+            pbSquare33.Size = new Size(111, 105);
             pbSquare33.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare33.TabIndex = 3;
             pbSquare33.TabStop = false;
@@ -1246,10 +1390,10 @@
             panelBackgroundF5.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundF5.Controls.Add(pbSquare34);
             panelBackgroundF5.Dock = DockStyle.Fill;
-            panelBackgroundF5.Location = new Point(550, 315);
+            panelBackgroundF5.Location = new Point(555, 315);
             panelBackgroundF5.Margin = new Padding(0);
             panelBackgroundF5.Name = "panelBackgroundF5";
-            panelBackgroundF5.Size = new Size(110, 105);
+            panelBackgroundF5.Size = new Size(111, 105);
             panelBackgroundF5.TabIndex = 29;
             // 
             // pbSquare34
@@ -1259,7 +1403,7 @@
             pbSquare34.Location = new Point(0, 0);
             pbSquare34.Margin = new Padding(0);
             pbSquare34.Name = "pbSquare34";
-            pbSquare34.Size = new Size(110, 105);
+            pbSquare34.Size = new Size(111, 105);
             pbSquare34.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare34.TabIndex = 3;
             pbSquare34.TabStop = false;
@@ -1270,10 +1414,10 @@
             panelBackgroundE5.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundE5.Controls.Add(pbSquare35);
             panelBackgroundE5.Dock = DockStyle.Fill;
-            panelBackgroundE5.Location = new Point(440, 315);
+            panelBackgroundE5.Location = new Point(444, 315);
             panelBackgroundE5.Margin = new Padding(0);
             panelBackgroundE5.Name = "panelBackgroundE5";
-            panelBackgroundE5.Size = new Size(110, 105);
+            panelBackgroundE5.Size = new Size(111, 105);
             panelBackgroundE5.TabIndex = 28;
             // 
             // pbSquare35
@@ -1283,7 +1427,7 @@
             pbSquare35.Location = new Point(0, 0);
             pbSquare35.Margin = new Padding(0);
             pbSquare35.Name = "pbSquare35";
-            pbSquare35.Size = new Size(110, 105);
+            pbSquare35.Size = new Size(111, 105);
             pbSquare35.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare35.TabIndex = 3;
             pbSquare35.TabStop = false;
@@ -1294,10 +1438,10 @@
             panelBackgroundD5.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundD5.Controls.Add(pbSquare36);
             panelBackgroundD5.Dock = DockStyle.Fill;
-            panelBackgroundD5.Location = new Point(330, 315);
+            panelBackgroundD5.Location = new Point(333, 315);
             panelBackgroundD5.Margin = new Padding(0);
             panelBackgroundD5.Name = "panelBackgroundD5";
-            panelBackgroundD5.Size = new Size(110, 105);
+            panelBackgroundD5.Size = new Size(111, 105);
             panelBackgroundD5.TabIndex = 27;
             // 
             // pbSquare36
@@ -1307,7 +1451,7 @@
             pbSquare36.Location = new Point(0, 0);
             pbSquare36.Margin = new Padding(0);
             pbSquare36.Name = "pbSquare36";
-            pbSquare36.Size = new Size(110, 105);
+            pbSquare36.Size = new Size(111, 105);
             pbSquare36.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare36.TabIndex = 3;
             pbSquare36.TabStop = false;
@@ -1318,10 +1462,10 @@
             panelBackgroundC5.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundC5.Controls.Add(pbSquare37);
             panelBackgroundC5.Dock = DockStyle.Fill;
-            panelBackgroundC5.Location = new Point(220, 315);
+            panelBackgroundC5.Location = new Point(222, 315);
             panelBackgroundC5.Margin = new Padding(0);
             panelBackgroundC5.Name = "panelBackgroundC5";
-            panelBackgroundC5.Size = new Size(110, 105);
+            panelBackgroundC5.Size = new Size(111, 105);
             panelBackgroundC5.TabIndex = 26;
             // 
             // pbSquare37
@@ -1331,7 +1475,7 @@
             pbSquare37.Location = new Point(0, 0);
             pbSquare37.Margin = new Padding(0);
             pbSquare37.Name = "pbSquare37";
-            pbSquare37.Size = new Size(110, 105);
+            pbSquare37.Size = new Size(111, 105);
             pbSquare37.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare37.TabIndex = 3;
             pbSquare37.TabStop = false;
@@ -1342,10 +1486,10 @@
             panelBackgroundB5.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundB5.Controls.Add(pbSquare38);
             panelBackgroundB5.Dock = DockStyle.Fill;
-            panelBackgroundB5.Location = new Point(110, 315);
+            panelBackgroundB5.Location = new Point(111, 315);
             panelBackgroundB5.Margin = new Padding(0);
             panelBackgroundB5.Name = "panelBackgroundB5";
-            panelBackgroundB5.Size = new Size(110, 105);
+            panelBackgroundB5.Size = new Size(111, 105);
             panelBackgroundB5.TabIndex = 25;
             // 
             // pbSquare38
@@ -1355,7 +1499,7 @@
             pbSquare38.Location = new Point(0, 0);
             pbSquare38.Margin = new Padding(0);
             pbSquare38.Name = "pbSquare38";
-            pbSquare38.Size = new Size(110, 105);
+            pbSquare38.Size = new Size(111, 105);
             pbSquare38.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare38.TabIndex = 3;
             pbSquare38.TabStop = false;
@@ -1369,7 +1513,7 @@
             panelBackgroundA5.Location = new Point(0, 315);
             panelBackgroundA5.Margin = new Padding(0);
             panelBackgroundA5.Name = "panelBackgroundA5";
-            panelBackgroundA5.Size = new Size(110, 105);
+            panelBackgroundA5.Size = new Size(111, 105);
             panelBackgroundA5.TabIndex = 24;
             // 
             // pbSquare39
@@ -1379,7 +1523,7 @@
             pbSquare39.Location = new Point(0, 0);
             pbSquare39.Margin = new Padding(0);
             pbSquare39.Name = "pbSquare39";
-            pbSquare39.Size = new Size(110, 105);
+            pbSquare39.Size = new Size(111, 105);
             pbSquare39.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare39.TabIndex = 3;
             pbSquare39.TabStop = false;
@@ -1390,10 +1534,10 @@
             panelBackgroundH6.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundH6.Controls.Add(pbSquare40);
             panelBackgroundH6.Dock = DockStyle.Fill;
-            panelBackgroundH6.Location = new Point(770, 210);
+            panelBackgroundH6.Location = new Point(777, 210);
             panelBackgroundH6.Margin = new Padding(0);
             panelBackgroundH6.Name = "panelBackgroundH6";
-            panelBackgroundH6.Size = new Size(113, 105);
+            panelBackgroundH6.Size = new Size(112, 105);
             panelBackgroundH6.TabIndex = 23;
             // 
             // pbSquare40
@@ -1403,7 +1547,7 @@
             pbSquare40.Location = new Point(0, 0);
             pbSquare40.Margin = new Padding(0);
             pbSquare40.Name = "pbSquare40";
-            pbSquare40.Size = new Size(113, 105);
+            pbSquare40.Size = new Size(112, 105);
             pbSquare40.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare40.TabIndex = 3;
             pbSquare40.TabStop = false;
@@ -1414,10 +1558,10 @@
             panelBackgroundG6.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundG6.Controls.Add(pbSquare41);
             panelBackgroundG6.Dock = DockStyle.Fill;
-            panelBackgroundG6.Location = new Point(660, 210);
+            panelBackgroundG6.Location = new Point(666, 210);
             panelBackgroundG6.Margin = new Padding(0);
             panelBackgroundG6.Name = "panelBackgroundG6";
-            panelBackgroundG6.Size = new Size(110, 105);
+            panelBackgroundG6.Size = new Size(111, 105);
             panelBackgroundG6.TabIndex = 22;
             // 
             // pbSquare41
@@ -1427,7 +1571,7 @@
             pbSquare41.Location = new Point(0, 0);
             pbSquare41.Margin = new Padding(0);
             pbSquare41.Name = "pbSquare41";
-            pbSquare41.Size = new Size(110, 105);
+            pbSquare41.Size = new Size(111, 105);
             pbSquare41.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare41.TabIndex = 3;
             pbSquare41.TabStop = false;
@@ -1438,10 +1582,10 @@
             panelBackgroundF6.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundF6.Controls.Add(pbSquare42);
             panelBackgroundF6.Dock = DockStyle.Fill;
-            panelBackgroundF6.Location = new Point(550, 210);
+            panelBackgroundF6.Location = new Point(555, 210);
             panelBackgroundF6.Margin = new Padding(0);
             panelBackgroundF6.Name = "panelBackgroundF6";
-            panelBackgroundF6.Size = new Size(110, 105);
+            panelBackgroundF6.Size = new Size(111, 105);
             panelBackgroundF6.TabIndex = 21;
             // 
             // pbSquare42
@@ -1451,7 +1595,7 @@
             pbSquare42.Location = new Point(0, 0);
             pbSquare42.Margin = new Padding(0);
             pbSquare42.Name = "pbSquare42";
-            pbSquare42.Size = new Size(110, 105);
+            pbSquare42.Size = new Size(111, 105);
             pbSquare42.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare42.TabIndex = 3;
             pbSquare42.TabStop = false;
@@ -1462,10 +1606,10 @@
             panelBackgroundE6.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundE6.Controls.Add(pbSquare43);
             panelBackgroundE6.Dock = DockStyle.Fill;
-            panelBackgroundE6.Location = new Point(440, 210);
+            panelBackgroundE6.Location = new Point(444, 210);
             panelBackgroundE6.Margin = new Padding(0);
             panelBackgroundE6.Name = "panelBackgroundE6";
-            panelBackgroundE6.Size = new Size(110, 105);
+            panelBackgroundE6.Size = new Size(111, 105);
             panelBackgroundE6.TabIndex = 20;
             // 
             // pbSquare43
@@ -1475,7 +1619,7 @@
             pbSquare43.Location = new Point(0, 0);
             pbSquare43.Margin = new Padding(0);
             pbSquare43.Name = "pbSquare43";
-            pbSquare43.Size = new Size(110, 105);
+            pbSquare43.Size = new Size(111, 105);
             pbSquare43.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare43.TabIndex = 3;
             pbSquare43.TabStop = false;
@@ -1486,10 +1630,10 @@
             panelBackgroundD6.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundD6.Controls.Add(pbSquare44);
             panelBackgroundD6.Dock = DockStyle.Fill;
-            panelBackgroundD6.Location = new Point(330, 210);
+            panelBackgroundD6.Location = new Point(333, 210);
             panelBackgroundD6.Margin = new Padding(0);
             panelBackgroundD6.Name = "panelBackgroundD6";
-            panelBackgroundD6.Size = new Size(110, 105);
+            panelBackgroundD6.Size = new Size(111, 105);
             panelBackgroundD6.TabIndex = 19;
             // 
             // pbSquare44
@@ -1499,7 +1643,7 @@
             pbSquare44.Location = new Point(0, 0);
             pbSquare44.Margin = new Padding(0);
             pbSquare44.Name = "pbSquare44";
-            pbSquare44.Size = new Size(110, 105);
+            pbSquare44.Size = new Size(111, 105);
             pbSquare44.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare44.TabIndex = 3;
             pbSquare44.TabStop = false;
@@ -1510,10 +1654,10 @@
             panelBackgroundC6.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundC6.Controls.Add(pbSquare45);
             panelBackgroundC6.Dock = DockStyle.Fill;
-            panelBackgroundC6.Location = new Point(220, 210);
+            panelBackgroundC6.Location = new Point(222, 210);
             panelBackgroundC6.Margin = new Padding(0);
             panelBackgroundC6.Name = "panelBackgroundC6";
-            panelBackgroundC6.Size = new Size(110, 105);
+            panelBackgroundC6.Size = new Size(111, 105);
             panelBackgroundC6.TabIndex = 18;
             // 
             // pbSquare45
@@ -1523,7 +1667,7 @@
             pbSquare45.Location = new Point(0, 0);
             pbSquare45.Margin = new Padding(0);
             pbSquare45.Name = "pbSquare45";
-            pbSquare45.Size = new Size(110, 105);
+            pbSquare45.Size = new Size(111, 105);
             pbSquare45.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare45.TabIndex = 3;
             pbSquare45.TabStop = false;
@@ -1534,10 +1678,10 @@
             panelBackgroundB6.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundB6.Controls.Add(pbSquare46);
             panelBackgroundB6.Dock = DockStyle.Fill;
-            panelBackgroundB6.Location = new Point(110, 210);
+            panelBackgroundB6.Location = new Point(111, 210);
             panelBackgroundB6.Margin = new Padding(0);
             panelBackgroundB6.Name = "panelBackgroundB6";
-            panelBackgroundB6.Size = new Size(110, 105);
+            panelBackgroundB6.Size = new Size(111, 105);
             panelBackgroundB6.TabIndex = 17;
             // 
             // pbSquare46
@@ -1547,7 +1691,7 @@
             pbSquare46.Location = new Point(0, 0);
             pbSquare46.Margin = new Padding(0);
             pbSquare46.Name = "pbSquare46";
-            pbSquare46.Size = new Size(110, 105);
+            pbSquare46.Size = new Size(111, 105);
             pbSquare46.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare46.TabIndex = 3;
             pbSquare46.TabStop = false;
@@ -1561,7 +1705,7 @@
             panelBackgroundA6.Location = new Point(0, 210);
             panelBackgroundA6.Margin = new Padding(0);
             panelBackgroundA6.Name = "panelBackgroundA6";
-            panelBackgroundA6.Size = new Size(110, 105);
+            panelBackgroundA6.Size = new Size(111, 105);
             panelBackgroundA6.TabIndex = 16;
             // 
             // pbSquare47
@@ -1571,7 +1715,7 @@
             pbSquare47.Location = new Point(0, 0);
             pbSquare47.Margin = new Padding(0);
             pbSquare47.Name = "pbSquare47";
-            pbSquare47.Size = new Size(110, 105);
+            pbSquare47.Size = new Size(111, 105);
             pbSquare47.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare47.TabIndex = 3;
             pbSquare47.TabStop = false;
@@ -1582,10 +1726,10 @@
             panelBackgroundH7.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundH7.Controls.Add(pbSquare48);
             panelBackgroundH7.Dock = DockStyle.Fill;
-            panelBackgroundH7.Location = new Point(770, 105);
+            panelBackgroundH7.Location = new Point(777, 105);
             panelBackgroundH7.Margin = new Padding(0);
             panelBackgroundH7.Name = "panelBackgroundH7";
-            panelBackgroundH7.Size = new Size(113, 105);
+            panelBackgroundH7.Size = new Size(112, 105);
             panelBackgroundH7.TabIndex = 15;
             // 
             // pbSquare48
@@ -1596,7 +1740,7 @@
             pbSquare48.Location = new Point(0, 0);
             pbSquare48.Margin = new Padding(0);
             pbSquare48.Name = "pbSquare48";
-            pbSquare48.Size = new Size(113, 105);
+            pbSquare48.Size = new Size(112, 105);
             pbSquare48.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare48.TabIndex = 2;
             pbSquare48.TabStop = false;
@@ -1607,10 +1751,10 @@
             panelBackgroundG7.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundG7.Controls.Add(pbSquare49);
             panelBackgroundG7.Dock = DockStyle.Fill;
-            panelBackgroundG7.Location = new Point(660, 105);
+            panelBackgroundG7.Location = new Point(666, 105);
             panelBackgroundG7.Margin = new Padding(0);
             panelBackgroundG7.Name = "panelBackgroundG7";
-            panelBackgroundG7.Size = new Size(110, 105);
+            panelBackgroundG7.Size = new Size(111, 105);
             panelBackgroundG7.TabIndex = 14;
             // 
             // pbSquare49
@@ -1621,7 +1765,7 @@
             pbSquare49.Location = new Point(0, 0);
             pbSquare49.Margin = new Padding(0);
             pbSquare49.Name = "pbSquare49";
-            pbSquare49.Size = new Size(110, 105);
+            pbSquare49.Size = new Size(111, 105);
             pbSquare49.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare49.TabIndex = 2;
             pbSquare49.TabStop = false;
@@ -1632,10 +1776,10 @@
             panelBackgroundF7.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundF7.Controls.Add(pbSquare50);
             panelBackgroundF7.Dock = DockStyle.Fill;
-            panelBackgroundF7.Location = new Point(550, 105);
+            panelBackgroundF7.Location = new Point(555, 105);
             panelBackgroundF7.Margin = new Padding(0);
             panelBackgroundF7.Name = "panelBackgroundF7";
-            panelBackgroundF7.Size = new Size(110, 105);
+            panelBackgroundF7.Size = new Size(111, 105);
             panelBackgroundF7.TabIndex = 13;
             // 
             // pbSquare50
@@ -1646,7 +1790,7 @@
             pbSquare50.Location = new Point(0, 0);
             pbSquare50.Margin = new Padding(0);
             pbSquare50.Name = "pbSquare50";
-            pbSquare50.Size = new Size(110, 105);
+            pbSquare50.Size = new Size(111, 105);
             pbSquare50.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare50.TabIndex = 2;
             pbSquare50.TabStop = false;
@@ -1657,10 +1801,10 @@
             panelBackgroundE7.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundE7.Controls.Add(pbSquare51);
             panelBackgroundE7.Dock = DockStyle.Fill;
-            panelBackgroundE7.Location = new Point(440, 105);
+            panelBackgroundE7.Location = new Point(444, 105);
             panelBackgroundE7.Margin = new Padding(0);
             panelBackgroundE7.Name = "panelBackgroundE7";
-            panelBackgroundE7.Size = new Size(110, 105);
+            panelBackgroundE7.Size = new Size(111, 105);
             panelBackgroundE7.TabIndex = 12;
             // 
             // pbSquare51
@@ -1671,7 +1815,7 @@
             pbSquare51.Location = new Point(0, 0);
             pbSquare51.Margin = new Padding(0);
             pbSquare51.Name = "pbSquare51";
-            pbSquare51.Size = new Size(110, 105);
+            pbSquare51.Size = new Size(111, 105);
             pbSquare51.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare51.TabIndex = 2;
             pbSquare51.TabStop = false;
@@ -1682,10 +1826,10 @@
             panelBackgroundD7.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundD7.Controls.Add(pbSquare52);
             panelBackgroundD7.Dock = DockStyle.Fill;
-            panelBackgroundD7.Location = new Point(330, 105);
+            panelBackgroundD7.Location = new Point(333, 105);
             panelBackgroundD7.Margin = new Padding(0);
             panelBackgroundD7.Name = "panelBackgroundD7";
-            panelBackgroundD7.Size = new Size(110, 105);
+            panelBackgroundD7.Size = new Size(111, 105);
             panelBackgroundD7.TabIndex = 11;
             // 
             // pbSquare52
@@ -1696,7 +1840,7 @@
             pbSquare52.Location = new Point(0, 0);
             pbSquare52.Margin = new Padding(0);
             pbSquare52.Name = "pbSquare52";
-            pbSquare52.Size = new Size(110, 105);
+            pbSquare52.Size = new Size(111, 105);
             pbSquare52.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare52.TabIndex = 2;
             pbSquare52.TabStop = false;
@@ -1707,10 +1851,10 @@
             panelBackgroundC7.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundC7.Controls.Add(pbSquare53);
             panelBackgroundC7.Dock = DockStyle.Fill;
-            panelBackgroundC7.Location = new Point(220, 105);
+            panelBackgroundC7.Location = new Point(222, 105);
             panelBackgroundC7.Margin = new Padding(0);
             panelBackgroundC7.Name = "panelBackgroundC7";
-            panelBackgroundC7.Size = new Size(110, 105);
+            panelBackgroundC7.Size = new Size(111, 105);
             panelBackgroundC7.TabIndex = 10;
             // 
             // pbSquare53
@@ -1721,7 +1865,7 @@
             pbSquare53.Location = new Point(0, 0);
             pbSquare53.Margin = new Padding(0);
             pbSquare53.Name = "pbSquare53";
-            pbSquare53.Size = new Size(110, 105);
+            pbSquare53.Size = new Size(111, 105);
             pbSquare53.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare53.TabIndex = 2;
             pbSquare53.TabStop = false;
@@ -1732,10 +1876,10 @@
             panelBackgroundB7.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundB7.Controls.Add(pbSquare54);
             panelBackgroundB7.Dock = DockStyle.Fill;
-            panelBackgroundB7.Location = new Point(110, 105);
+            panelBackgroundB7.Location = new Point(111, 105);
             panelBackgroundB7.Margin = new Padding(0);
             panelBackgroundB7.Name = "panelBackgroundB7";
-            panelBackgroundB7.Size = new Size(110, 105);
+            panelBackgroundB7.Size = new Size(111, 105);
             panelBackgroundB7.TabIndex = 9;
             // 
             // pbSquare54
@@ -1746,7 +1890,7 @@
             pbSquare54.Location = new Point(0, 0);
             pbSquare54.Margin = new Padding(0);
             pbSquare54.Name = "pbSquare54";
-            pbSquare54.Size = new Size(110, 105);
+            pbSquare54.Size = new Size(111, 105);
             pbSquare54.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare54.TabIndex = 2;
             pbSquare54.TabStop = false;
@@ -1760,7 +1904,7 @@
             panelBackgroundA7.Location = new Point(0, 105);
             panelBackgroundA7.Margin = new Padding(0);
             panelBackgroundA7.Name = "panelBackgroundA7";
-            panelBackgroundA7.Size = new Size(110, 105);
+            panelBackgroundA7.Size = new Size(111, 105);
             panelBackgroundA7.TabIndex = 8;
             // 
             // pbSquare55
@@ -1771,7 +1915,7 @@
             pbSquare55.Location = new Point(0, 0);
             pbSquare55.Margin = new Padding(0);
             pbSquare55.Name = "pbSquare55";
-            pbSquare55.Size = new Size(110, 105);
+            pbSquare55.Size = new Size(111, 105);
             pbSquare55.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare55.TabIndex = 2;
             pbSquare55.TabStop = false;
@@ -1782,10 +1926,10 @@
             panelBackgroundH8.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundH8.Controls.Add(pbSquare56);
             panelBackgroundH8.Dock = DockStyle.Fill;
-            panelBackgroundH8.Location = new Point(770, 0);
+            panelBackgroundH8.Location = new Point(777, 0);
             panelBackgroundH8.Margin = new Padding(0);
             panelBackgroundH8.Name = "panelBackgroundH8";
-            panelBackgroundH8.Size = new Size(113, 105);
+            panelBackgroundH8.Size = new Size(112, 105);
             panelBackgroundH8.TabIndex = 7;
             // 
             // pbSquare56
@@ -1796,7 +1940,7 @@
             pbSquare56.Location = new Point(0, 0);
             pbSquare56.Margin = new Padding(0);
             pbSquare56.Name = "pbSquare56";
-            pbSquare56.Size = new Size(113, 105);
+            pbSquare56.Size = new Size(112, 105);
             pbSquare56.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare56.TabIndex = 2;
             pbSquare56.TabStop = false;
@@ -1807,10 +1951,10 @@
             panelBackgroundG8.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundG8.Controls.Add(pbSquare57);
             panelBackgroundG8.Dock = DockStyle.Fill;
-            panelBackgroundG8.Location = new Point(660, 0);
+            panelBackgroundG8.Location = new Point(666, 0);
             panelBackgroundG8.Margin = new Padding(0);
             panelBackgroundG8.Name = "panelBackgroundG8";
-            panelBackgroundG8.Size = new Size(110, 105);
+            panelBackgroundG8.Size = new Size(111, 105);
             panelBackgroundG8.TabIndex = 6;
             // 
             // pbSquare57
@@ -1821,7 +1965,7 @@
             pbSquare57.Location = new Point(0, 0);
             pbSquare57.Margin = new Padding(0);
             pbSquare57.Name = "pbSquare57";
-            pbSquare57.Size = new Size(110, 105);
+            pbSquare57.Size = new Size(111, 105);
             pbSquare57.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare57.TabIndex = 2;
             pbSquare57.TabStop = false;
@@ -1832,10 +1976,10 @@
             panelBackgroundF8.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundF8.Controls.Add(pbSquare58);
             panelBackgroundF8.Dock = DockStyle.Fill;
-            panelBackgroundF8.Location = new Point(550, 0);
+            panelBackgroundF8.Location = new Point(555, 0);
             panelBackgroundF8.Margin = new Padding(0);
             panelBackgroundF8.Name = "panelBackgroundF8";
-            panelBackgroundF8.Size = new Size(110, 105);
+            panelBackgroundF8.Size = new Size(111, 105);
             panelBackgroundF8.TabIndex = 5;
             // 
             // pbSquare58
@@ -1846,7 +1990,7 @@
             pbSquare58.Location = new Point(0, 0);
             pbSquare58.Margin = new Padding(0);
             pbSquare58.Name = "pbSquare58";
-            pbSquare58.Size = new Size(110, 105);
+            pbSquare58.Size = new Size(111, 105);
             pbSquare58.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare58.TabIndex = 2;
             pbSquare58.TabStop = false;
@@ -1857,10 +2001,10 @@
             panelBackgroundE8.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundE8.Controls.Add(pbSquare59);
             panelBackgroundE8.Dock = DockStyle.Fill;
-            panelBackgroundE8.Location = new Point(440, 0);
+            panelBackgroundE8.Location = new Point(444, 0);
             panelBackgroundE8.Margin = new Padding(0);
             panelBackgroundE8.Name = "panelBackgroundE8";
-            panelBackgroundE8.Size = new Size(110, 105);
+            panelBackgroundE8.Size = new Size(111, 105);
             panelBackgroundE8.TabIndex = 4;
             // 
             // pbSquare59
@@ -1871,7 +2015,7 @@
             pbSquare59.Location = new Point(0, 0);
             pbSquare59.Margin = new Padding(0);
             pbSquare59.Name = "pbSquare59";
-            pbSquare59.Size = new Size(110, 105);
+            pbSquare59.Size = new Size(111, 105);
             pbSquare59.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare59.TabIndex = 2;
             pbSquare59.TabStop = false;
@@ -1882,10 +2026,10 @@
             panelBackgroundD8.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundD8.Controls.Add(pbSquare60);
             panelBackgroundD8.Dock = DockStyle.Fill;
-            panelBackgroundD8.Location = new Point(330, 0);
+            panelBackgroundD8.Location = new Point(333, 0);
             panelBackgroundD8.Margin = new Padding(0);
             panelBackgroundD8.Name = "panelBackgroundD8";
-            panelBackgroundD8.Size = new Size(110, 105);
+            panelBackgroundD8.Size = new Size(111, 105);
             panelBackgroundD8.TabIndex = 3;
             // 
             // pbSquare60
@@ -1896,7 +2040,7 @@
             pbSquare60.Location = new Point(0, 0);
             pbSquare60.Margin = new Padding(0);
             pbSquare60.Name = "pbSquare60";
-            pbSquare60.Size = new Size(110, 105);
+            pbSquare60.Size = new Size(111, 105);
             pbSquare60.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare60.TabIndex = 2;
             pbSquare60.TabStop = false;
@@ -1907,10 +2051,10 @@
             panelBackgroundC8.BackColor = Color.FromArgb(234, 237, 209);
             panelBackgroundC8.Controls.Add(pbSquare61);
             panelBackgroundC8.Dock = DockStyle.Fill;
-            panelBackgroundC8.Location = new Point(220, 0);
+            panelBackgroundC8.Location = new Point(222, 0);
             panelBackgroundC8.Margin = new Padding(0);
             panelBackgroundC8.Name = "panelBackgroundC8";
-            panelBackgroundC8.Size = new Size(110, 105);
+            panelBackgroundC8.Size = new Size(111, 105);
             panelBackgroundC8.TabIndex = 2;
             // 
             // pbSquare61
@@ -1921,7 +2065,7 @@
             pbSquare61.Location = new Point(0, 0);
             pbSquare61.Margin = new Padding(0);
             pbSquare61.Name = "pbSquare61";
-            pbSquare61.Size = new Size(110, 105);
+            pbSquare61.Size = new Size(111, 105);
             pbSquare61.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare61.TabIndex = 2;
             pbSquare61.TabStop = false;
@@ -1932,10 +2076,10 @@
             panelBackgroundB8.BackColor = Color.FromArgb(114, 150, 84);
             panelBackgroundB8.Controls.Add(pbSquare62);
             panelBackgroundB8.Dock = DockStyle.Fill;
-            panelBackgroundB8.Location = new Point(110, 0);
+            panelBackgroundB8.Location = new Point(111, 0);
             panelBackgroundB8.Margin = new Padding(0);
             panelBackgroundB8.Name = "panelBackgroundB8";
-            panelBackgroundB8.Size = new Size(110, 105);
+            panelBackgroundB8.Size = new Size(111, 105);
             panelBackgroundB8.TabIndex = 1;
             // 
             // pbSquare62
@@ -1946,7 +2090,7 @@
             pbSquare62.Location = new Point(0, 0);
             pbSquare62.Margin = new Padding(0);
             pbSquare62.Name = "pbSquare62";
-            pbSquare62.Size = new Size(110, 105);
+            pbSquare62.Size = new Size(111, 105);
             pbSquare62.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare62.TabIndex = 2;
             pbSquare62.TabStop = false;
@@ -1960,7 +2104,7 @@
             panelBackgroundA8.Location = new Point(0, 0);
             panelBackgroundA8.Margin = new Padding(0);
             panelBackgroundA8.Name = "panelBackgroundA8";
-            panelBackgroundA8.Size = new Size(110, 105);
+            panelBackgroundA8.Size = new Size(111, 105);
             panelBackgroundA8.TabIndex = 0;
             // 
             // pbSquare63
@@ -1971,7 +2115,7 @@
             pbSquare63.Location = new Point(0, 0);
             pbSquare63.Margin = new Padding(0);
             pbSquare63.Name = "pbSquare63";
-            pbSquare63.Size = new Size(110, 105);
+            pbSquare63.Size = new Size(111, 105);
             pbSquare63.SizeMode = PictureBoxSizeMode.StretchImage;
             pbSquare63.TabIndex = 2;
             pbSquare63.TabStop = false;
@@ -1983,9 +2127,9 @@
             labelStatus.AutoSize = true;
             labelStatus.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
             labelStatus.ForeColor = Color.White;
-            labelStatus.Location = new Point(886, 40);
+            labelStatus.Location = new Point(892, 40);
             labelStatus.Name = "labelStatus";
-            labelStatus.Size = new Size(289, 25);
+            labelStatus.Size = new Size(216, 25);
             labelStatus.TabIndex = 1;
             labelStatus.Text = "Game is running";
             labelStatus.TextAlign = ContentAlignment.MiddleCenter;
@@ -1994,20 +2138,607 @@
             // 
             buttonRestart.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             buttonRestart.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonRestart.Location = new Point(886, 140);
+            buttonRestart.Location = new Point(892, 140);
             buttonRestart.Name = "buttonRestart";
-            buttonRestart.Size = new Size(289, 34);
+            buttonRestart.Size = new Size(216, 34);
             buttonRestart.TabIndex = 2;
             buttonRestart.Text = "Restart game";
             buttonRestart.UseVisualStyleBackColor = true;
             buttonRestart.Click += buttonRestart_Click;
+            // 
+            // tlpDebug
+            // 
+            tlpDebug.ColumnCount = 4;
+            tlpDebug.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tlpDebug.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tlpDebug.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tlpDebug.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tlpDebug.Controls.Add(panelDebugBlackWhole, 2, 3);
+            tlpDebug.Controls.Add(panelDebugBlackKing, 1, 3);
+            tlpDebug.Controls.Add(panelDebugBlackQueens, 0, 3);
+            tlpDebug.Controls.Add(panelDebugBlackBishops, 3, 2);
+            tlpDebug.Controls.Add(panelDebugBlackKnights, 2, 2);
+            tlpDebug.Controls.Add(panelDebugBlackRooks, 1, 2);
+            tlpDebug.Controls.Add(panelDebugBlackPawns, 0, 2);
+            tlpDebug.Controls.Add(panelDebugWhiteWhole, 2, 1);
+            tlpDebug.Controls.Add(panelDebugWhiteRooks, 1, 0);
+            tlpDebug.Controls.Add(panelDebugWhiteKing, 1, 1);
+            tlpDebug.Controls.Add(panelDebugWhiteQueens, 0, 1);
+            tlpDebug.Controls.Add(panelDebugWhiteBishops, 3, 0);
+            tlpDebug.Controls.Add(panelDebugWhiteKnights, 2, 0);
+            tlpDebug.Controls.Add(panelDebugWhitePawns, 0, 0);
+            tlpDebug.Dock = DockStyle.Fill;
+            tlpDebug.Location = new Point(1114, 3);
+            tlpDebug.Name = "tlpDebug";
+            tlpDebug.RowCount = 4;
+            tableLayoutPanel.SetRowSpan(tlpDebug, 8);
+            tlpDebug.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tlpDebug.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tlpDebug.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tlpDebug.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tlpDebug.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlpDebug.Size = new Size(661, 838);
+            tlpDebug.TabIndex = 5;
+            // 
+            // panelDebugWhitePawns
+            // 
+            panelDebugWhitePawns.BorderStyle = BorderStyle.FixedSingle;
+            panelDebugWhitePawns.Controls.Add(textBoxDebugWhitePawns);
+            panelDebugWhitePawns.Controls.Add(labelDebugWhitePawns);
+            panelDebugWhitePawns.Dock = DockStyle.Fill;
+            panelDebugWhitePawns.Location = new Point(3, 3);
+            panelDebugWhitePawns.Name = "panelDebugWhitePawns";
+            panelDebugWhitePawns.Size = new Size(159, 203);
+            panelDebugWhitePawns.TabIndex = 0;
+            // 
+            // labelDebugWhitePawns
+            // 
+            labelDebugWhitePawns.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelDebugWhitePawns.AutoSize = true;
+            labelDebugWhitePawns.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDebugWhitePawns.ForeColor = Color.White;
+            labelDebugWhitePawns.Location = new Point(12, 0);
+            labelDebugWhitePawns.Name = "labelDebugWhitePawns";
+            labelDebugWhitePawns.Size = new Size(127, 25);
+            labelDebugWhitePawns.TabIndex = 2;
+            labelDebugWhitePawns.Text = "White pawns:";
+            labelDebugWhitePawns.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textBoxDebugWhitePawns
+            // 
+            textBoxDebugWhitePawns.BackColor = Color.FromArgb(59, 58, 57);
+            textBoxDebugWhitePawns.Dock = DockStyle.Bottom;
+            textBoxDebugWhitePawns.Font = new Font("Courier New", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBoxDebugWhitePawns.ForeColor = Color.LightGray;
+            textBoxDebugWhitePawns.Location = new Point(0, 30);
+            textBoxDebugWhitePawns.Multiline = true;
+            textBoxDebugWhitePawns.Name = "textBoxDebugWhitePawns";
+            textBoxDebugWhitePawns.ReadOnly = true;
+            textBoxDebugWhitePawns.Size = new Size(157, 171);
+            textBoxDebugWhitePawns.TabIndex = 3;
+            textBoxDebugWhitePawns.Text = "00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n11111111\r\n00000000";
+            textBoxDebugWhitePawns.TextAlign = HorizontalAlignment.Center;
+            // 
+            // panelDebugWhiteKnights
+            // 
+            panelDebugWhiteKnights.BorderStyle = BorderStyle.FixedSingle;
+            panelDebugWhiteKnights.Controls.Add(textBoxDebugWhiteKnights);
+            panelDebugWhiteKnights.Controls.Add(labelDebugWhiteKnights);
+            panelDebugWhiteKnights.Dock = DockStyle.Fill;
+            panelDebugWhiteKnights.Location = new Point(333, 3);
+            panelDebugWhiteKnights.Name = "panelDebugWhiteKnights";
+            panelDebugWhiteKnights.Size = new Size(159, 203);
+            panelDebugWhiteKnights.TabIndex = 1;
+            // 
+            // textBoxDebugWhiteKnights
+            // 
+            textBoxDebugWhiteKnights.BackColor = Color.FromArgb(59, 58, 57);
+            textBoxDebugWhiteKnights.Dock = DockStyle.Bottom;
+            textBoxDebugWhiteKnights.Font = new Font("Courier New", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBoxDebugWhiteKnights.ForeColor = Color.LightGray;
+            textBoxDebugWhiteKnights.Location = new Point(0, 30);
+            textBoxDebugWhiteKnights.Multiline = true;
+            textBoxDebugWhiteKnights.Name = "textBoxDebugWhiteKnights";
+            textBoxDebugWhiteKnights.ReadOnly = true;
+            textBoxDebugWhiteKnights.Size = new Size(157, 171);
+            textBoxDebugWhiteKnights.TabIndex = 3;
+            textBoxDebugWhiteKnights.Text = "00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n01000010";
+            textBoxDebugWhiteKnights.TextAlign = HorizontalAlignment.Center;
+            // 
+            // labelDebugWhiteKnights
+            // 
+            labelDebugWhiteKnights.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelDebugWhiteKnights.AutoSize = true;
+            labelDebugWhiteKnights.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDebugWhiteKnights.ForeColor = Color.White;
+            labelDebugWhiteKnights.Location = new Point(12, 0);
+            labelDebugWhiteKnights.Name = "labelDebugWhiteKnights";
+            labelDebugWhiteKnights.Size = new Size(136, 25);
+            labelDebugWhiteKnights.TabIndex = 2;
+            labelDebugWhiteKnights.Text = "White knights:";
+            labelDebugWhiteKnights.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelDebugWhiteBishops
+            // 
+            panelDebugWhiteBishops.BorderStyle = BorderStyle.FixedSingle;
+            panelDebugWhiteBishops.Controls.Add(textBoxDebugWhiteBishops);
+            panelDebugWhiteBishops.Controls.Add(labelDebugWhiteBishops);
+            panelDebugWhiteBishops.Dock = DockStyle.Fill;
+            panelDebugWhiteBishops.Location = new Point(498, 3);
+            panelDebugWhiteBishops.Name = "panelDebugWhiteBishops";
+            panelDebugWhiteBishops.Size = new Size(160, 203);
+            panelDebugWhiteBishops.TabIndex = 2;
+            // 
+            // textBoxDebugWhiteBishops
+            // 
+            textBoxDebugWhiteBishops.BackColor = Color.FromArgb(59, 58, 57);
+            textBoxDebugWhiteBishops.Dock = DockStyle.Bottom;
+            textBoxDebugWhiteBishops.Font = new Font("Courier New", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBoxDebugWhiteBishops.ForeColor = Color.LightGray;
+            textBoxDebugWhiteBishops.Location = new Point(0, 30);
+            textBoxDebugWhiteBishops.Multiline = true;
+            textBoxDebugWhiteBishops.Name = "textBoxDebugWhiteBishops";
+            textBoxDebugWhiteBishops.ReadOnly = true;
+            textBoxDebugWhiteBishops.Size = new Size(158, 171);
+            textBoxDebugWhiteBishops.TabIndex = 3;
+            textBoxDebugWhiteBishops.Text = "00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00100100";
+            textBoxDebugWhiteBishops.TextAlign = HorizontalAlignment.Center;
+            // 
+            // labelDebugWhiteBishops
+            // 
+            labelDebugWhiteBishops.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelDebugWhiteBishops.AutoSize = true;
+            labelDebugWhiteBishops.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDebugWhiteBishops.ForeColor = Color.White;
+            labelDebugWhiteBishops.Location = new Point(12, 0);
+            labelDebugWhiteBishops.Name = "labelDebugWhiteBishops";
+            labelDebugWhiteBishops.Size = new Size(138, 25);
+            labelDebugWhiteBishops.TabIndex = 2;
+            labelDebugWhiteBishops.Text = "White bishops:";
+            labelDebugWhiteBishops.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelDebugWhiteQueens
+            // 
+            panelDebugWhiteQueens.BorderStyle = BorderStyle.FixedSingle;
+            panelDebugWhiteQueens.Controls.Add(textBoxDebugWhiteQueens);
+            panelDebugWhiteQueens.Controls.Add(labelDebugWhiteQueens);
+            panelDebugWhiteQueens.Dock = DockStyle.Fill;
+            panelDebugWhiteQueens.Location = new Point(3, 212);
+            panelDebugWhiteQueens.Name = "panelDebugWhiteQueens";
+            panelDebugWhiteQueens.Size = new Size(159, 203);
+            panelDebugWhiteQueens.TabIndex = 3;
+            // 
+            // textBoxDebugWhiteQueens
+            // 
+            textBoxDebugWhiteQueens.BackColor = Color.FromArgb(59, 58, 57);
+            textBoxDebugWhiteQueens.Dock = DockStyle.Bottom;
+            textBoxDebugWhiteQueens.Font = new Font("Courier New", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBoxDebugWhiteQueens.ForeColor = Color.LightGray;
+            textBoxDebugWhiteQueens.Location = new Point(0, 30);
+            textBoxDebugWhiteQueens.Multiline = true;
+            textBoxDebugWhiteQueens.Name = "textBoxDebugWhiteQueens";
+            textBoxDebugWhiteQueens.ReadOnly = true;
+            textBoxDebugWhiteQueens.Size = new Size(157, 171);
+            textBoxDebugWhiteQueens.TabIndex = 3;
+            textBoxDebugWhiteQueens.Text = "00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00010000";
+            textBoxDebugWhiteQueens.TextAlign = HorizontalAlignment.Center;
+            // 
+            // labelDebugWhiteQueens
+            // 
+            labelDebugWhiteQueens.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelDebugWhiteQueens.AutoSize = true;
+            labelDebugWhiteQueens.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDebugWhiteQueens.ForeColor = Color.White;
+            labelDebugWhiteQueens.Location = new Point(12, 0);
+            labelDebugWhiteQueens.Name = "labelDebugWhiteQueens";
+            labelDebugWhiteQueens.Size = new Size(134, 25);
+            labelDebugWhiteQueens.TabIndex = 2;
+            labelDebugWhiteQueens.Text = "White queens:";
+            labelDebugWhiteQueens.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelDebugWhiteKing
+            // 
+            panelDebugWhiteKing.BorderStyle = BorderStyle.FixedSingle;
+            panelDebugWhiteKing.Controls.Add(textBoxDebugWhiteKing);
+            panelDebugWhiteKing.Controls.Add(labelDebugWhiteKing);
+            panelDebugWhiteKing.Dock = DockStyle.Fill;
+            panelDebugWhiteKing.Location = new Point(168, 212);
+            panelDebugWhiteKing.Name = "panelDebugWhiteKing";
+            panelDebugWhiteKing.Size = new Size(159, 203);
+            panelDebugWhiteKing.TabIndex = 4;
+            // 
+            // textBoxDebugWhiteKing
+            // 
+            textBoxDebugWhiteKing.BackColor = Color.FromArgb(59, 58, 57);
+            textBoxDebugWhiteKing.Dock = DockStyle.Bottom;
+            textBoxDebugWhiteKing.Font = new Font("Courier New", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBoxDebugWhiteKing.ForeColor = Color.LightGray;
+            textBoxDebugWhiteKing.Location = new Point(0, 30);
+            textBoxDebugWhiteKing.Multiline = true;
+            textBoxDebugWhiteKing.Name = "textBoxDebugWhiteKing";
+            textBoxDebugWhiteKing.ReadOnly = true;
+            textBoxDebugWhiteKing.Size = new Size(157, 171);
+            textBoxDebugWhiteKing.TabIndex = 3;
+            textBoxDebugWhiteKing.Text = "00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00001000";
+            textBoxDebugWhiteKing.TextAlign = HorizontalAlignment.Center;
+            // 
+            // labelDebugWhiteKing
+            // 
+            labelDebugWhiteKing.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelDebugWhiteKing.AutoSize = true;
+            labelDebugWhiteKing.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDebugWhiteKing.ForeColor = Color.White;
+            labelDebugWhiteKing.Location = new Point(25, 0);
+            labelDebugWhiteKing.Name = "labelDebugWhiteKing";
+            labelDebugWhiteKing.Size = new Size(110, 25);
+            labelDebugWhiteKing.TabIndex = 2;
+            labelDebugWhiteKing.Text = "White king:";
+            labelDebugWhiteKing.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelDebugWhiteRooks
+            // 
+            panelDebugWhiteRooks.BorderStyle = BorderStyle.FixedSingle;
+            panelDebugWhiteRooks.Controls.Add(textBoxDebugWhiteRooks);
+            panelDebugWhiteRooks.Controls.Add(labelDebugWhiteRooks);
+            panelDebugWhiteRooks.Dock = DockStyle.Fill;
+            panelDebugWhiteRooks.Location = new Point(168, 3);
+            panelDebugWhiteRooks.Name = "panelDebugWhiteRooks";
+            panelDebugWhiteRooks.Size = new Size(159, 203);
+            panelDebugWhiteRooks.TabIndex = 5;
+            // 
+            // textBoxDebugWhiteRooks
+            // 
+            textBoxDebugWhiteRooks.BackColor = Color.FromArgb(59, 58, 57);
+            textBoxDebugWhiteRooks.Dock = DockStyle.Bottom;
+            textBoxDebugWhiteRooks.Font = new Font("Courier New", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBoxDebugWhiteRooks.ForeColor = Color.LightGray;
+            textBoxDebugWhiteRooks.Location = new Point(0, 30);
+            textBoxDebugWhiteRooks.Multiline = true;
+            textBoxDebugWhiteRooks.Name = "textBoxDebugWhiteRooks";
+            textBoxDebugWhiteRooks.ReadOnly = true;
+            textBoxDebugWhiteRooks.Size = new Size(157, 171);
+            textBoxDebugWhiteRooks.TabIndex = 3;
+            textBoxDebugWhiteRooks.Text = "00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n10000001";
+            textBoxDebugWhiteRooks.TextAlign = HorizontalAlignment.Center;
+            // 
+            // labelDebugWhiteRooks
+            // 
+            labelDebugWhiteRooks.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelDebugWhiteRooks.AutoSize = true;
+            labelDebugWhiteRooks.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDebugWhiteRooks.ForeColor = Color.White;
+            labelDebugWhiteRooks.Location = new Point(15, 0);
+            labelDebugWhiteRooks.Name = "labelDebugWhiteRooks";
+            labelDebugWhiteRooks.Size = new Size(120, 25);
+            labelDebugWhiteRooks.TabIndex = 2;
+            labelDebugWhiteRooks.Text = "White rooks:";
+            labelDebugWhiteRooks.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelDebugWhiteWhole
+            // 
+            panelDebugWhiteWhole.BorderStyle = BorderStyle.FixedSingle;
+            panelDebugWhiteWhole.Controls.Add(textBoxDebugWhiteWhole);
+            panelDebugWhiteWhole.Controls.Add(labelDebugWhiteWhole);
+            panelDebugWhiteWhole.Dock = DockStyle.Fill;
+            panelDebugWhiteWhole.Location = new Point(333, 212);
+            panelDebugWhiteWhole.Name = "panelDebugWhiteWhole";
+            panelDebugWhiteWhole.Size = new Size(159, 203);
+            panelDebugWhiteWhole.TabIndex = 6;
+            // 
+            // textBoxDebugWhiteWhole
+            // 
+            textBoxDebugWhiteWhole.BackColor = Color.FromArgb(59, 58, 57);
+            textBoxDebugWhiteWhole.Dock = DockStyle.Bottom;
+            textBoxDebugWhiteWhole.Font = new Font("Courier New", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBoxDebugWhiteWhole.ForeColor = Color.LightGray;
+            textBoxDebugWhiteWhole.Location = new Point(0, 30);
+            textBoxDebugWhiteWhole.Multiline = true;
+            textBoxDebugWhiteWhole.Name = "textBoxDebugWhiteWhole";
+            textBoxDebugWhiteWhole.ReadOnly = true;
+            textBoxDebugWhiteWhole.Size = new Size(157, 171);
+            textBoxDebugWhiteWhole.TabIndex = 3;
+            textBoxDebugWhiteWhole.Text = "00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n11111111\r\n11111111";
+            textBoxDebugWhiteWhole.TextAlign = HorizontalAlignment.Center;
+            // 
+            // labelDebugWhiteWhole
+            // 
+            labelDebugWhiteWhole.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelDebugWhiteWhole.AutoSize = true;
+            labelDebugWhiteWhole.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDebugWhiteWhole.ForeColor = Color.White;
+            labelDebugWhiteWhole.Location = new Point(18, 0);
+            labelDebugWhiteWhole.Name = "labelDebugWhiteWhole";
+            labelDebugWhiteWhole.Size = new Size(124, 25);
+            labelDebugWhiteWhole.TabIndex = 2;
+            labelDebugWhiteWhole.Text = "White whole:";
+            labelDebugWhiteWhole.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelDebugBlackPawns
+            // 
+            panelDebugBlackPawns.BorderStyle = BorderStyle.FixedSingle;
+            panelDebugBlackPawns.Controls.Add(textBoxDebugBlackPawns);
+            panelDebugBlackPawns.Controls.Add(labelDebugBlackPawns);
+            panelDebugBlackPawns.Dock = DockStyle.Fill;
+            panelDebugBlackPawns.Location = new Point(3, 421);
+            panelDebugBlackPawns.Name = "panelDebugBlackPawns";
+            panelDebugBlackPawns.Size = new Size(159, 203);
+            panelDebugBlackPawns.TabIndex = 7;
+            // 
+            // textBoxDebugBlackPawns
+            // 
+            textBoxDebugBlackPawns.BackColor = Color.FromArgb(59, 58, 57);
+            textBoxDebugBlackPawns.BorderStyle = BorderStyle.FixedSingle;
+            textBoxDebugBlackPawns.Dock = DockStyle.Bottom;
+            textBoxDebugBlackPawns.Font = new Font("Courier New", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBoxDebugBlackPawns.ForeColor = Color.LightGray;
+            textBoxDebugBlackPawns.Location = new Point(0, 30);
+            textBoxDebugBlackPawns.Multiline = true;
+            textBoxDebugBlackPawns.Name = "textBoxDebugBlackPawns";
+            textBoxDebugBlackPawns.ReadOnly = true;
+            textBoxDebugBlackPawns.Size = new Size(157, 171);
+            textBoxDebugBlackPawns.TabIndex = 3;
+            textBoxDebugBlackPawns.Text = "00000000\r\n11111111\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000";
+            textBoxDebugBlackPawns.TextAlign = HorizontalAlignment.Center;
+            // 
+            // labelDebugBlackPawns
+            // 
+            labelDebugBlackPawns.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelDebugBlackPawns.AutoSize = true;
+            labelDebugBlackPawns.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDebugBlackPawns.ForeColor = Color.White;
+            labelDebugBlackPawns.Location = new Point(18, 0);
+            labelDebugBlackPawns.Name = "labelDebugBlackPawns";
+            labelDebugBlackPawns.Size = new Size(122, 25);
+            labelDebugBlackPawns.TabIndex = 2;
+            labelDebugBlackPawns.Text = "Black pawns:";
+            labelDebugBlackPawns.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelDebugBlackRooks
+            // 
+            panelDebugBlackRooks.BorderStyle = BorderStyle.FixedSingle;
+            panelDebugBlackRooks.Controls.Add(textBoxDebugBlackRooks);
+            panelDebugBlackRooks.Controls.Add(labelDebugBlackRooks);
+            panelDebugBlackRooks.Dock = DockStyle.Fill;
+            panelDebugBlackRooks.Location = new Point(168, 421);
+            panelDebugBlackRooks.Name = "panelDebugBlackRooks";
+            panelDebugBlackRooks.Size = new Size(159, 203);
+            panelDebugBlackRooks.TabIndex = 8;
+            // 
+            // textBoxDebugBlackRooks
+            // 
+            textBoxDebugBlackRooks.BackColor = Color.FromArgb(59, 58, 57);
+            textBoxDebugBlackRooks.BorderStyle = BorderStyle.FixedSingle;
+            textBoxDebugBlackRooks.Dock = DockStyle.Bottom;
+            textBoxDebugBlackRooks.Font = new Font("Courier New", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBoxDebugBlackRooks.ForeColor = Color.LightGray;
+            textBoxDebugBlackRooks.Location = new Point(0, 30);
+            textBoxDebugBlackRooks.Multiline = true;
+            textBoxDebugBlackRooks.Name = "textBoxDebugBlackRooks";
+            textBoxDebugBlackRooks.ReadOnly = true;
+            textBoxDebugBlackRooks.Size = new Size(157, 171);
+            textBoxDebugBlackRooks.TabIndex = 3;
+            textBoxDebugBlackRooks.Text = "10000001\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000";
+            textBoxDebugBlackRooks.TextAlign = HorizontalAlignment.Center;
+            // 
+            // labelDebugBlackRooks
+            // 
+            labelDebugBlackRooks.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelDebugBlackRooks.AutoSize = true;
+            labelDebugBlackRooks.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDebugBlackRooks.ForeColor = Color.White;
+            labelDebugBlackRooks.Location = new Point(21, 0);
+            labelDebugBlackRooks.Name = "labelDebugBlackRooks";
+            labelDebugBlackRooks.Size = new Size(115, 25);
+            labelDebugBlackRooks.TabIndex = 2;
+            labelDebugBlackRooks.Text = "Black rooks:";
+            labelDebugBlackRooks.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelDebugBlackKnights
+            // 
+            panelDebugBlackKnights.BorderStyle = BorderStyle.FixedSingle;
+            panelDebugBlackKnights.Controls.Add(textBoxDebugBlackKnights);
+            panelDebugBlackKnights.Controls.Add(labelDebugBlackKnights);
+            panelDebugBlackKnights.Dock = DockStyle.Fill;
+            panelDebugBlackKnights.Location = new Point(333, 421);
+            panelDebugBlackKnights.Name = "panelDebugBlackKnights";
+            panelDebugBlackKnights.Size = new Size(159, 203);
+            panelDebugBlackKnights.TabIndex = 9;
+            // 
+            // textBoxDebugBlackKnights
+            // 
+            textBoxDebugBlackKnights.BackColor = Color.FromArgb(59, 58, 57);
+            textBoxDebugBlackKnights.BorderStyle = BorderStyle.FixedSingle;
+            textBoxDebugBlackKnights.Dock = DockStyle.Bottom;
+            textBoxDebugBlackKnights.Font = new Font("Courier New", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBoxDebugBlackKnights.ForeColor = Color.LightGray;
+            textBoxDebugBlackKnights.Location = new Point(0, 30);
+            textBoxDebugBlackKnights.Multiline = true;
+            textBoxDebugBlackKnights.Name = "textBoxDebugBlackKnights";
+            textBoxDebugBlackKnights.ReadOnly = true;
+            textBoxDebugBlackKnights.Size = new Size(157, 171);
+            textBoxDebugBlackKnights.TabIndex = 3;
+            textBoxDebugBlackKnights.Text = "01000010\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000";
+            textBoxDebugBlackKnights.TextAlign = HorizontalAlignment.Center;
+            // 
+            // labelDebugBlackKnights
+            // 
+            labelDebugBlackKnights.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelDebugBlackKnights.AutoSize = true;
+            labelDebugBlackKnights.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDebugBlackKnights.ForeColor = Color.White;
+            labelDebugBlackKnights.Location = new Point(15, 0);
+            labelDebugBlackKnights.Name = "labelDebugBlackKnights";
+            labelDebugBlackKnights.Size = new Size(131, 25);
+            labelDebugBlackKnights.TabIndex = 2;
+            labelDebugBlackKnights.Text = "Black knights:";
+            labelDebugBlackKnights.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelDebugBlackBishops
+            // 
+            panelDebugBlackBishops.BorderStyle = BorderStyle.FixedSingle;
+            panelDebugBlackBishops.Controls.Add(textBoxDebugBlackBishops);
+            panelDebugBlackBishops.Controls.Add(labelDebugBlackBishops);
+            panelDebugBlackBishops.Dock = DockStyle.Fill;
+            panelDebugBlackBishops.Location = new Point(498, 421);
+            panelDebugBlackBishops.Name = "panelDebugBlackBishops";
+            panelDebugBlackBishops.Size = new Size(160, 203);
+            panelDebugBlackBishops.TabIndex = 10;
+            // 
+            // textBoxDebugBlackBishops
+            // 
+            textBoxDebugBlackBishops.BackColor = Color.FromArgb(59, 58, 57);
+            textBoxDebugBlackBishops.BorderStyle = BorderStyle.FixedSingle;
+            textBoxDebugBlackBishops.Dock = DockStyle.Bottom;
+            textBoxDebugBlackBishops.Font = new Font("Courier New", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBoxDebugBlackBishops.ForeColor = Color.LightGray;
+            textBoxDebugBlackBishops.Location = new Point(0, 30);
+            textBoxDebugBlackBishops.Multiline = true;
+            textBoxDebugBlackBishops.Name = "textBoxDebugBlackBishops";
+            textBoxDebugBlackBishops.ReadOnly = true;
+            textBoxDebugBlackBishops.Size = new Size(158, 171);
+            textBoxDebugBlackBishops.TabIndex = 3;
+            textBoxDebugBlackBishops.Text = "00100100\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000";
+            textBoxDebugBlackBishops.TextAlign = HorizontalAlignment.Center;
+            // 
+            // labelDebugBlackBishops
+            // 
+            labelDebugBlackBishops.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelDebugBlackBishops.AutoSize = true;
+            labelDebugBlackBishops.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDebugBlackBishops.ForeColor = Color.White;
+            labelDebugBlackBishops.Location = new Point(15, 0);
+            labelDebugBlackBishops.Name = "labelDebugBlackBishops";
+            labelDebugBlackBishops.Size = new Size(133, 25);
+            labelDebugBlackBishops.TabIndex = 2;
+            labelDebugBlackBishops.Text = "Black bishops:";
+            labelDebugBlackBishops.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelDebugBlackQueens
+            // 
+            panelDebugBlackQueens.BorderStyle = BorderStyle.FixedSingle;
+            panelDebugBlackQueens.Controls.Add(textBoxDebugBlackQueens);
+            panelDebugBlackQueens.Controls.Add(labelDebugBlackQueens);
+            panelDebugBlackQueens.Dock = DockStyle.Fill;
+            panelDebugBlackQueens.Location = new Point(3, 630);
+            panelDebugBlackQueens.Name = "panelDebugBlackQueens";
+            panelDebugBlackQueens.Size = new Size(159, 205);
+            panelDebugBlackQueens.TabIndex = 11;
+            // 
+            // textBoxDebugBlackQueens
+            // 
+            textBoxDebugBlackQueens.BackColor = Color.FromArgb(59, 58, 57);
+            textBoxDebugBlackQueens.BorderStyle = BorderStyle.FixedSingle;
+            textBoxDebugBlackQueens.Dock = DockStyle.Bottom;
+            textBoxDebugBlackQueens.Font = new Font("Courier New", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBoxDebugBlackQueens.ForeColor = Color.LightGray;
+            textBoxDebugBlackQueens.Location = new Point(0, 32);
+            textBoxDebugBlackQueens.Multiline = true;
+            textBoxDebugBlackQueens.Name = "textBoxDebugBlackQueens";
+            textBoxDebugBlackQueens.ReadOnly = true;
+            textBoxDebugBlackQueens.Size = new Size(157, 171);
+            textBoxDebugBlackQueens.TabIndex = 3;
+            textBoxDebugBlackQueens.Text = "00010000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000";
+            textBoxDebugBlackQueens.TextAlign = HorizontalAlignment.Center;
+            // 
+            // labelDebugBlackQueens
+            // 
+            labelDebugBlackQueens.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelDebugBlackQueens.AutoSize = true;
+            labelDebugBlackQueens.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDebugBlackQueens.ForeColor = Color.White;
+            labelDebugBlackQueens.Location = new Point(15, 0);
+            labelDebugBlackQueens.Name = "labelDebugBlackQueens";
+            labelDebugBlackQueens.Size = new Size(129, 25);
+            labelDebugBlackQueens.TabIndex = 2;
+            labelDebugBlackQueens.Text = "Black queens:";
+            labelDebugBlackQueens.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelDebugBlackKing
+            // 
+            panelDebugBlackKing.BorderStyle = BorderStyle.FixedSingle;
+            panelDebugBlackKing.Controls.Add(textBoxDebugBlackKing);
+            panelDebugBlackKing.Controls.Add(labelDebugBlackKing);
+            panelDebugBlackKing.Dock = DockStyle.Fill;
+            panelDebugBlackKing.Location = new Point(168, 630);
+            panelDebugBlackKing.Name = "panelDebugBlackKing";
+            panelDebugBlackKing.Size = new Size(159, 205);
+            panelDebugBlackKing.TabIndex = 12;
+            // 
+            // textBoxDebugBlackKing
+            // 
+            textBoxDebugBlackKing.BackColor = Color.FromArgb(59, 58, 57);
+            textBoxDebugBlackKing.BorderStyle = BorderStyle.FixedSingle;
+            textBoxDebugBlackKing.Dock = DockStyle.Bottom;
+            textBoxDebugBlackKing.Font = new Font("Courier New", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBoxDebugBlackKing.ForeColor = Color.LightGray;
+            textBoxDebugBlackKing.Location = new Point(0, 32);
+            textBoxDebugBlackKing.Multiline = true;
+            textBoxDebugBlackKing.Name = "textBoxDebugBlackKing";
+            textBoxDebugBlackKing.ReadOnly = true;
+            textBoxDebugBlackKing.Size = new Size(157, 171);
+            textBoxDebugBlackKing.TabIndex = 3;
+            textBoxDebugBlackKing.Text = "00001000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000";
+            textBoxDebugBlackKing.TextAlign = HorizontalAlignment.Center;
+            // 
+            // labelDebugBlackKing
+            // 
+            labelDebugBlackKing.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelDebugBlackKing.AutoSize = true;
+            labelDebugBlackKing.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDebugBlackKing.ForeColor = Color.White;
+            labelDebugBlackKing.Location = new Point(28, 0);
+            labelDebugBlackKing.Name = "labelDebugBlackKing";
+            labelDebugBlackKing.Size = new Size(105, 25);
+            labelDebugBlackKing.TabIndex = 2;
+            labelDebugBlackKing.Text = "Black king:";
+            labelDebugBlackKing.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panelDebugBlackWhole
+            // 
+            panelDebugBlackWhole.BorderStyle = BorderStyle.FixedSingle;
+            panelDebugBlackWhole.Controls.Add(textBoxDebugBlackWhole);
+            panelDebugBlackWhole.Controls.Add(labelDebugBlackWhole);
+            panelDebugBlackWhole.Dock = DockStyle.Fill;
+            panelDebugBlackWhole.Location = new Point(333, 630);
+            panelDebugBlackWhole.Name = "panelDebugBlackWhole";
+            panelDebugBlackWhole.Size = new Size(159, 205);
+            panelDebugBlackWhole.TabIndex = 13;
+            // 
+            // textBoxDebugBlackWhole
+            // 
+            textBoxDebugBlackWhole.BackColor = Color.FromArgb(59, 58, 57);
+            textBoxDebugBlackWhole.BorderStyle = BorderStyle.FixedSingle;
+            textBoxDebugBlackWhole.Dock = DockStyle.Bottom;
+            textBoxDebugBlackWhole.Font = new Font("Courier New", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBoxDebugBlackWhole.ForeColor = Color.LightGray;
+            textBoxDebugBlackWhole.Location = new Point(0, 32);
+            textBoxDebugBlackWhole.Multiline = true;
+            textBoxDebugBlackWhole.Name = "textBoxDebugBlackWhole";
+            textBoxDebugBlackWhole.ReadOnly = true;
+            textBoxDebugBlackWhole.Size = new Size(157, 171);
+            textBoxDebugBlackWhole.TabIndex = 3;
+            textBoxDebugBlackWhole.Text = "11111111\r\n11111111\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000\r\n00000000";
+            textBoxDebugBlackWhole.TextAlign = HorizontalAlignment.Center;
+            // 
+            // labelDebugBlackWhole
+            // 
+            labelDebugBlackWhole.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            labelDebugBlackWhole.AutoSize = true;
+            labelDebugBlackWhole.Font = new Font("Ebrima", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            labelDebugBlackWhole.ForeColor = Color.White;
+            labelDebugBlackWhole.Location = new Point(21, 0);
+            labelDebugBlackWhole.Name = "labelDebugBlackWhole";
+            labelDebugBlackWhole.Size = new Size(119, 25);
+            labelDebugBlackWhole.TabIndex = 2;
+            labelDebugBlackWhole.Text = "Black whole:";
+            labelDebugBlackWhole.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(81, 80, 77);
-            ClientSize = new Size(1178, 844);
+            ClientSize = new Size(1778, 844);
             Controls.Add(tableLayoutPanel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -2145,6 +2876,35 @@
             ((System.ComponentModel.ISupportInitialize)pbSquare62).EndInit();
             panelBackgroundA8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbSquare63).EndInit();
+            tlpDebug.ResumeLayout(false);
+            panelDebugWhitePawns.ResumeLayout(false);
+            panelDebugWhitePawns.PerformLayout();
+            panelDebugWhiteKnights.ResumeLayout(false);
+            panelDebugWhiteKnights.PerformLayout();
+            panelDebugWhiteBishops.ResumeLayout(false);
+            panelDebugWhiteBishops.PerformLayout();
+            panelDebugWhiteQueens.ResumeLayout(false);
+            panelDebugWhiteQueens.PerformLayout();
+            panelDebugWhiteKing.ResumeLayout(false);
+            panelDebugWhiteKing.PerformLayout();
+            panelDebugWhiteRooks.ResumeLayout(false);
+            panelDebugWhiteRooks.PerformLayout();
+            panelDebugWhiteWhole.ResumeLayout(false);
+            panelDebugWhiteWhole.PerformLayout();
+            panelDebugBlackPawns.ResumeLayout(false);
+            panelDebugBlackPawns.PerformLayout();
+            panelDebugBlackRooks.ResumeLayout(false);
+            panelDebugBlackRooks.PerformLayout();
+            panelDebugBlackKnights.ResumeLayout(false);
+            panelDebugBlackKnights.PerformLayout();
+            panelDebugBlackBishops.ResumeLayout(false);
+            panelDebugBlackBishops.PerformLayout();
+            panelDebugBlackQueens.ResumeLayout(false);
+            panelDebugBlackQueens.PerformLayout();
+            panelDebugBlackKing.ResumeLayout(false);
+            panelDebugBlackKing.PerformLayout();
+            panelDebugBlackWhole.ResumeLayout(false);
+            panelDebugBlackWhole.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -2282,5 +3042,50 @@
         private PictureBox pbSquare47;
         private Label labelStatus;
         private Button buttonRestart;
+        private Button buttonNext;
+        private Button buttonBack;
+        private TableLayoutPanel tlpDebug;
+        private Panel panelDebugWhitePawns;
+        private Label labelDebugWhitePawns;
+        private TextBox textBoxDebugWhitePawns;
+        private Panel panelDebugWhiteKnights;
+        private TextBox textBoxDebugWhiteKnights;
+        private Label labelDebugWhiteKnights;
+        private Panel panelDebugWhiteRooks;
+        private TextBox textBoxDebugWhiteRooks;
+        private Label labelDebugWhiteRooks;
+        private Panel panelDebugWhiteKing;
+        private TextBox textBoxDebugWhiteKing;
+        private Label labelDebugWhiteKing;
+        private Panel panelDebugWhiteQueens;
+        private TextBox textBoxDebugWhiteQueens;
+        private Label labelDebugWhiteQueens;
+        private Panel panelDebugWhiteBishops;
+        private TextBox textBoxDebugWhiteBishops;
+        private Label labelDebugWhiteBishops;
+        private Panel panelDebugWhiteWhole;
+        private TextBox textBoxDebugWhiteWhole;
+        private Label labelDebugWhiteWhole;
+        private Panel panelDebugBlackPawns;
+        private TextBox textBoxDebugBlackPawns;
+        private Label labelDebugBlackPawns;
+        private Panel panelDebugBlackRooks;
+        private TextBox textBoxDebugBlackRooks;
+        private Label labelDebugBlackRooks;
+        private Panel panelDebugBlackKnights;
+        private TextBox textBoxDebugBlackKnights;
+        private Label labelDebugBlackKnights;
+        private Panel panelDebugBlackBishops;
+        private TextBox textBoxDebugBlackBishops;
+        private Label labelDebugBlackBishops;
+        private Panel panelDebugBlackQueens;
+        private TextBox textBoxDebugBlackQueens;
+        private Label labelDebugBlackQueens;
+        private Panel panelDebugBlackKing;
+        private TextBox textBoxDebugBlackKing;
+        private Label labelDebugBlackKing;
+        private Panel panelDebugBlackWhole;
+        private TextBox textBoxDebugBlackWhole;
+        private Label labelDebugBlackWhole;
     }
 }
