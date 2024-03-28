@@ -11,8 +11,8 @@ namespace ButterDevelopChessEngine.Controllers
 
         public static bool IsGameOver(Board board)
         {
-            return IsCheckmateFor(board, white: false) || IsCheckmateFor(board, white: true) || 
-                   IsStalemateFor(board, white: false) || IsStalemateFor(board, white: true);
+            return IsCheckmateFor(board, white: false) || IsCheckmateFor(board, white: true) ||
+                   (board.LastMove != null && IsStalemateFor(board, white: !board.LastMove.IsWhite));  
         }
 
         public static bool IsCheckFor(Board board, bool white)

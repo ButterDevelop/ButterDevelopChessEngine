@@ -143,7 +143,7 @@ namespace ButterDevelopChessEngine.Models
             _moves.Push(move);
         }
 
-        internal void UnmakeMove()
+        public Move UnmakeMove()
         {
             var move = _moves.Pop();
 
@@ -198,9 +198,11 @@ namespace ButterDevelopChessEngine.Models
             }
 
             _wholeBitboards[WHOLE] = _wholeBitboards[color] | _wholeBitboards[reversedColor];
+
+            return move;
         }
 
-        internal ulong Bitboard(int color, int piece)
+        public ulong Bitboard(int color, int piece)
         {
             return _bitboards[color][piece];
         }
@@ -224,7 +226,7 @@ namespace ButterDevelopChessEngine.Models
             }
         }
 
-        internal ulong[] WholeBitboards
+        public ulong[] WholeBitboards
         {
             get { return _wholeBitboards; }
         }
