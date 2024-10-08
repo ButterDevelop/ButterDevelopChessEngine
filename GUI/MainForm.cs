@@ -12,7 +12,7 @@ namespace GUI
                                       DEFAULT_POSSIBLE_MOVE_COLOR = Color.FromArgb(128, 128, 128, 192),
                                       DEFAULT_LAST_MOVE_COLOR     = Color.FromArgb(100, 200, 200, 30);
 
-        private const int AI_DEPTH = 3;
+        private const int AI_DEPTH = 5;
 
         private bool _playerTurn, _isPlayerPlayingWhite;
         private Board _board;
