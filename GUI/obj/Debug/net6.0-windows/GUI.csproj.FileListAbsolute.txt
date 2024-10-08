@@ -18,4 +18,5 @@ C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\GUI\obj\Debug\net6.0-windows\ref
 C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\GUI\obj\Debug\net6.0-windows\GUI.Properties.Resources.resources
 C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\GUI\bin\Debug\net6.0-windows\ButterDevelopChessEngine.dll
 C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\GUI\bin\Debug\net6.0-windows\ButterDevelopChessEngine.pdb
-C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\GUI\obj\Debug\net6.0-windows\GUI.csproj.CopyComplete
+C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\GUI\obj\Debug\net6.0-windows\GUI.sourcelink.json
+C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\GUI\obj\Debug\net6.0-windows\GUI.csproj.Up2Date

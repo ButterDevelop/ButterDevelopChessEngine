@@ -1,0 +1,154 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{12D12141-BB03-42C7-9EEF-E5717E57D18D}|GUI\\GUI.csproj|c:\\maximaa\\projects\\c#\\butterdevelopchessengine\\gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12D12141-BB03-42C7-9EEF-E5717E57D18D}|GUI\\GUI.csproj|solutionrelative:gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42A34C02-5660-409C-81A1-1808F45F90DC}|ButterDevelopChessEngine\\ButterDevelopChessEngine.csproj|c:\\maximaa\\projects\\c#\\butterdevelopchessengine\\butterdevelopchessengine\\models\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42A34C02-5660-409C-81A1-1808F45F90DC}|ButterDevelopChessEngine\\ButterDevelopChessEngine.csproj|solutionrelative:butterdevelopchessengine\\models\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42A34C02-5660-409C-81A1-1808F45F90DC}|ButterDevelopChessEngine\\ButterDevelopChessEngine.csproj|c:\\maximaa\\projects\\c#\\butterdevelopchessengine\\butterdevelopchessengine\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42A34C02-5660-409C-81A1-1808F45F90DC}|ButterDevelopChessEngine\\ButterDevelopChessEngine.csproj|solutionrelative:butterdevelopchessengine\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42A34C02-5660-409C-81A1-1808F45F90DC}|ButterDevelopChessEngine\\ButterDevelopChessEngine.csproj|c:\\maximaa\\projects\\c#\\butterdevelopchessengine\\butterdevelopchessengine\\controllers\\evaluationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42A34C02-5660-409C-81A1-1808F45F90DC}|ButterDevelopChessEngine\\ButterDevelopChessEngine.csproj|solutionrelative:butterdevelopchessengine\\controllers\\evaluationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42A34C02-5660-409C-81A1-1808F45F90DC}|ButterDevelopChessEngine\\ButterDevelopChessEngine.csproj|c:\\maximaa\\projects\\c#\\butterdevelopchessengine\\butterdevelopchessengine\\controllers\\verificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42A34C02-5660-409C-81A1-1808F45F90DC}|ButterDevelopChessEngine\\ButterDevelopChessEngine.csproj|solutionrelative:butterdevelopchessengine\\controllers\\verificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12D12141-BB03-42C7-9EEF-E5717E57D18D}|GUI\\GUI.csproj|C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{12D12141-BB03-42C7-9EEF-E5717E57D18D}|GUI\\GUI.csproj|solutionrelative:gui\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42A34C02-5660-409C-81A1-1808F45F90DC}|ButterDevelopChessEngine\\ButterDevelopChessEngine.csproj|c:\\maximaa\\projects\\c#\\butterdevelopchessengine\\butterdevelopchessengine\\controllers\\bitcalculations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42A34C02-5660-409C-81A1-1808F45F90DC}|ButterDevelopChessEngine\\ButterDevelopChessEngine.csproj|solutionrelative:butterdevelopchessengine\\controllers\\bitcalculations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42A34C02-5660-409C-81A1-1808F45F90DC}|ButterDevelopChessEngine\\ButterDevelopChessEngine.csproj|c:\\maximaa\\projects\\c#\\butterdevelopchessengine\\butterdevelopchessengine\\models\\move.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42A34C02-5660-409C-81A1-1808F45F90DC}|ButterDevelopChessEngine\\ButterDevelopChessEngine.csproj|solutionrelative:butterdevelopchessengine\\models\\move.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\GUI\\MainForm.cs",
+              "RelativeDocumentMoniker": "GUI\\MainForm.cs",
+              "ToolTip": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\GUI\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "GUI\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T18:06:54.276Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\GUI\\MainForm.cs",
+              "RelativeDocumentMoniker": "GUI\\MainForm.cs",
+              "ToolTip": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\GUI\\MainForm.cs",
+              "RelativeToolTip": "GUI\\MainForm.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T07:09:59.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Board.cs",
+              "DocumentMoniker": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\ButterDevelopChessEngine\\Models\\Board.cs",
+              "RelativeDocumentMoniker": "ButterDevelopChessEngine\\Models\\Board.cs",
+              "ToolTip": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\ButterDevelopChessEngine\\Models\\Board.cs",
+              "RelativeToolTip": "ButterDevelopChessEngine\\Models\\Board.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAAwBkAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T07:10:02.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EvaluationController.cs",
+              "DocumentMoniker": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\ButterDevelopChessEngine\\Controllers\\EvaluationController.cs",
+              "RelativeDocumentMoniker": "ButterDevelopChessEngine\\Controllers\\EvaluationController.cs",
+              "ToolTip": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\ButterDevelopChessEngine\\Controllers\\EvaluationController.cs",
+              "RelativeToolTip": "ButterDevelopChessEngine\\Controllers\\EvaluationController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-25T13:38:31.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VerificationController.cs",
+              "DocumentMoniker": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\ButterDevelopChessEngine\\Controllers\\VerificationController.cs",
+              "RelativeDocumentMoniker": "ButterDevelopChessEngine\\Controllers\\VerificationController.cs",
+              "ToolTip": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\ButterDevelopChessEngine\\Controllers\\VerificationController.cs",
+              "RelativeToolTip": "ButterDevelopChessEngine\\Controllers\\VerificationController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T08:55:03.921Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AIController.cs",
+              "DocumentMoniker": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\ButterDevelopChessEngine\\Controllers\\AIController.cs",
+              "RelativeDocumentMoniker": "ButterDevelopChessEngine\\Controllers\\AIController.cs",
+              "ToolTip": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\ButterDevelopChessEngine\\Controllers\\AIController.cs",
+              "RelativeToolTip": "ButterDevelopChessEngine\\Controllers\\AIController.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAiwF8AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T07:10:00.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Move.cs",
+              "DocumentMoniker": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\ButterDevelopChessEngine\\Models\\Move.cs",
+              "RelativeDocumentMoniker": "ButterDevelopChessEngine\\Models\\Move.cs",
+              "ToolTip": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\ButterDevelopChessEngine\\Models\\Move.cs",
+              "RelativeToolTip": "ButterDevelopChessEngine\\Models\\Move.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwA0AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T12:46:44.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BitCalculations.cs",
+              "DocumentMoniker": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\ButterDevelopChessEngine\\Controllers\\BitCalculations.cs",
+              "RelativeDocumentMoniker": "ButterDevelopChessEngine\\Controllers\\BitCalculations.cs",
+              "ToolTip": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\ButterDevelopChessEngine\\Controllers\\BitCalculations.cs",
+              "RelativeToolTip": "ButterDevelopChessEngine\\Controllers\\BitCalculations.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwB4AAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T08:01:10.592Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

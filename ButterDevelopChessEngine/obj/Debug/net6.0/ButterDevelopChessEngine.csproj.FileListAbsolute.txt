@@ -1,7 +1,6 @@
 C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\ButterDevelopChessEngine\bin\Debug\net6.0\ButterDevelopChessEngine.deps.json
 C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\ButterDevelopChessEngine\bin\Debug\net6.0\ButterDevelopChessEngine.dll
 C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\ButterDevelopChessEngine\bin\Debug\net6.0\ButterDevelopChessEngine.pdb
-C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\ButterDevelopChessEngine\obj\Debug\net6.0\ButterDevelopChessEngine.csproj.AssemblyReference.cache
 C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\ButterDevelopChessEngine\obj\Debug\net6.0\ButterDevelopChessEngine.GeneratedMSBuildEditorConfig.editorconfig
 C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\ButterDevelopChessEngine\obj\Debug\net6.0\ButterDevelopChessEngine.AssemblyInfoInputs.cache
 C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\ButterDevelopChessEngine\obj\Debug\net6.0\ButterDevelopChessEngine.AssemblyInfo.cs
@@ -10,3 +9,4 @@ C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\ButterDevelopChessEngine\obj\Deb
 C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\ButterDevelopChessEngine\obj\Debug\net6.0\refint\ButterDevelopChessEngine.dll
 C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\ButterDevelopChessEngine\obj\Debug\net6.0\ButterDevelopChessEngine.pdb
 C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\ButterDevelopChessEngine\obj\Debug\net6.0\ref\ButterDevelopChessEngine.dll
+C:\MaXiMAA\Projects\C#\ButterDevelopChessEngine\ButterDevelopChessEngine\obj\Debug\net6.0\ButterDevelopChessEngine.sourcelink.json

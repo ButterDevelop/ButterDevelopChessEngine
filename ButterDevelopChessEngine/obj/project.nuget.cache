@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "NzRhT0GvKEsAniB+393qWv0KUmngLjJ/YXaVIs32FDcgbR/xRu1VQgQhkGE3RSp2JtBisjWHCYnoXkDR2Ae2kA==",
+  "dgSpecHash": "0zq2d6nHGcc=",
   "success": true,
   "projectFilePath": "C:\\MaXiMAA\\Projects\\C#\\ButterDevelopChessEngine\\ButterDevelopChessEngine\\ButterDevelopChessEngine.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\maxim\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.31\\microsoft.windowsdesktop.app.ref.6.0.31.nupkg.sha512",
+    "C:\\Users\\maxim\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.31\\microsoft.netcore.app.ref.6.0.31.nupkg.sha512",
+    "C:\\Users\\maxim\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.31\\microsoft.aspnetcore.app.ref.6.0.31.nupkg.sha512"
+  ],
   "logs": []
 }
