@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ButterDevelopChessEngine")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d90d32d69e40c9530f6dd4e708c9752e451b77c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73d5994d764d8eea16cc915e3b7c23f0af895e93")]
 [assembly: System.Reflection.AssemblyProductAttribute("ButterDevelopChessEngine")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ButterDevelopChessEngine")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
